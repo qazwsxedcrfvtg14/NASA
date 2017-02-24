@@ -1,0 +1,38 @@
+True/False
+1.F
+沒有考慮到其他人占用頻寬，還有目標伺服器本身的頻寬
+2.F
+需要考慮到浮動IP和NAT的情況，還有第三者把別人的電腦拿去用的情況
+3.T
+如果沒有gateway的話就只能用broadcast的方式傳遞訊息，但是不能再Internet上使用broadcast的方式傳遞訊息，需要一個gateway來做轉介
+4.T
+觀察Wireshark得到的結論
+5.F
+Hub會broadcast所有封包，switch則會依照ARP表決定一個封包該往哪送
+6.T
+可以在自己的電腦上把所有需要的domain name都寫在hosts裡面，這樣就不需要DNS了(或是把全部的domain都換成IP)
+7.F
+802.11b/g/n的頻道是2.4GHz，而802.11ac則是5GHz，雖然802.11ac傳輸比較快，但是802.11b/g/n能傳播的範圍卻比較遠
+8.T
+by wikipedia
+9.F
+有可能會把user引導到其他的DNS server上查詢
+10.T
+但是DHCP server可以拒絕提供你一個DNS server's address
+11.T
+WPA2會將傳輸過程中的資料加密，但是如果其他使用者也使用相同的密碼的話，那可被其解密
+12.T
+VPN可以使得你換成別的線路去走，別的線路有機率會比較通順(通常不會)
+13.F
+沒有Public IP卻沒有NAT的話，別人的訊息送不回來
+14.F
+正常的TCP封包是有可能經常大小為2(42-40)，例如使用telnet上ptt的時候按Enter會送出一堆大小為2的\r\n或是輸入Big5格式的中文字也會送出一堆2bytes大小的資料。by觀察Wireshark的結果
+
+
+Select All That Apply
+1.
+d -> c -> b(without contact an administrator) -> e -> b
+2.
+a,c
+3.
+a,d

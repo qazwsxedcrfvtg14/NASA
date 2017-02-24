@@ -1,0 +1,63 @@
+ssh b05902086@nasa-hw0.csie.ntu.edu.tw
+#found "NASA{HW0_1S_Y0UR_T1CKET_T0_NASA_C0UR5E!!}"
+
+pwd
+#found "NASA{Y0U_ARE_@_Y0UR_H0ME!!}"
+
+start_from_scratch
+
+ls
+#found "NASA{1s_-al_2_5EE_WH4T_Y0U_H4VE:D}"
+
+chmod +x engine 
+./engine
+#found "NASA{chmod_4ND_./_0N_THE_FLY}"
+
+cat toolbox-key
+#get "WOW_IT_SEEMS_THAT_YOU_CAN_SEE_ME"
+unzip toolbox.zip
+tar -zxvf toolbox.tar.gz 
+cd toolbox
+ls
+cat flag5.txt
+#found "NASA{zip_4ND_tar_4RE_VERY_C0MM0N_1N_L1NUX}"
+
+./magic
+rm obstacle
+./magic
+mv crisis chance
+./magic
+#found "NASA{Cant_you_believe_that_you_built_up_my_wing}"
+
+cat /etc/passwd
+#found NASA's home is /mnt/nasa
+cd /mnt/nasa
+ls 
+#found etago
+./etago
+#a lot of junk
+exit
+scp b05902086@nasa-hw0.csie.ntu.edu.tw:/mnt/nasa/etago ~
+#use ida to read this file...
+./etago >junk.txt
+#open junk.txt, search "NASA"
+#found "NASA{|_AM_A|||||||||||||||||||||||||}"
+
+cd /plane
+ls
+ls -al
+./throttle
+#open new terminal 
+ssh b05902086@nasa-hw0.csie.ntu.edu.tw
+top
+#found the pid of throttle
+kill -s 2 $pid
+kill -s 3 $pid
+kill -s 20 $pid
+exit
+#found "NASA{ctrl_z_ctrl_c_ctrl_\}"
+
+man -wK NASA
+#get /usr/share/man/man1/man.1
+vi /usr/share/man/man1/man.1
+#found "NASA{M4N_15_THE_4BBREV1AT10N_0F_M4NUA1}"
