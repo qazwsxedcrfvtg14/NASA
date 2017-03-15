@@ -1,0 +1,55 @@
+Part1
+    (a)
+        Wireshark filter
+            ip.dst==140.112.172.2
+        String without encoded
+        ??? ANSI?? ?  ???? ? LesMiserable
+SECRET
+
+sGossiping
+
+/發P幣
+[A[B
+        String encoded by base64
+            //sY//sf//oYAEFOU0n/8P/6HwCHACD/8P/9Af/9A//9AP/7AExlc01pc2VyYWJsZQ0KU0VDUkVU
+DQoNCnNHb3NzaXBpbmcNCg0KL7VvULn0DQobW0EbW0I=
+    (b)
+        Telnet, TCP
+    (c)
+        let Data = Application Data
+        let Ht = Header of transport layer
+        let Hn = Header of network layer
+        let Hl = Header of link layer
+
+        User Computer
+            Encode Data with Ht, Hn, Hl
+        |
+        |   Transmitted on physical layer
+        v
+            Decode Hl
+        Switch: read something in Hn
+            Encode Hl
+        |
+        |   Transmitted on physical layer
+        v
+            Decode Hl, Hn
+        Router: read something in Ht
+            Encode Hl, Hn
+        |
+        |   Transmitted on physical layer
+        v
+            Decode Hl, Hn, Ht
+        PTT Server: Got the data
+Part2
+    (a)
+        DHCP is on the Application layer.
+        DHCP use UDP(transport layer) to dynamic allocated IP to other computer.
+        "The Dynamic Host Configuration Protocol (DHCP) is a standardized network protocol used on Internet Protocol (IP) networks." - by Wikipedia
+    (b)
+        使用支援IPv6的proxy代理
+        使用Tunnel Broker
+        使用支援IPv6的VPN代理
+        檢查 自己的電腦的網卡/作業系統 && 且到目標伺服器路徑上所有的機器都有正確的設定好IPv6
+    (c)
+        Governments of the Industrial World, you weary giants of flesh and steel, I come from Cyberspace, the new home of Mind. On behalf of the future, I ask you of the past to leave us alone. You are not welcome among us. You have no sovereignty where we gather. -from "A Declaration of the Independence of Cyberspace"
+        2017/02/23/23:50 GMT+8

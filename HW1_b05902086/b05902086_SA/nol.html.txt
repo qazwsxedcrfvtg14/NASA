@@ -1,0 +1,864 @@
+
+ <SCRIPT LANGUAGE="JavaScript">
+   function show(message1)
+       {
+          new1=window.open("","教室資訊","location,status,resizable=yes,width=600,height=100");
+          new1.document.write (message1);
+       }
+   function show_close()
+       {
+           new1.close();
+       }
+ </SCRIPT>
+<HTML>
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+<link rel=stylesheet type="text/css" href="font.css">
+<title>系所課程查詢</title>
+</HEAD>
+
+<BODY LEFTMARGIN="4" MARGINWIDTH="0" TOPMARGIN="0" MARGINHEIGHT="0" bgcolor="#FFFFFF" vlink="#666666">
+<table width="100%" border="0" cellspacing="3" cellpadding="0">
+  <tr> 
+    <td><font color="#333366"><a name="top"></a>您現在的位置：</font><a href="index.php">課程網頁查詢</a> 
+            &gt; 系所課程</td>
+    <td> 
+ <div align="right"><font color="#CC3300"><b></b></font> <font color="#333366">
+，歡迎進入台大課程網!</font></div>  
+
+    </td>
+  </tr>
+</table>
+ 
+<table width="100%" border="0">
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="4" bordercolor="#FFFFFF">
+              <tr>
+                <a target="_new" href=http://www.aca.ntu.edu.tw/aca2012/reg/SELCOU/105-2CREDIT.DOC> <font size=2  color=red>105-2修課學分數上下限規定</a>              </tr>
+              <tr> 
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_result.php">快速</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_01_major.php">共同</a></td>
+                <td align="center" width="7%" bgcolor="#FEEA9A"><b>系所</b></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_03_co.php">通識/新生專題/新生講座/基本能力</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_10_class.php">分班編組</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_05_ec.php">學程</a></td>
+                <td align="center" width="12%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_07_uw.php">進階英語<br>(研究生線上英文)</a></td>
+                  <td align="center"  width="7%"bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_14_write.php">寫作教學</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_09_gym.php">體育/軍訓</a></td>
+<!--                <td align="center" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_06_nd.php">進修學士</a></td>   -->
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_04_dt.php">遠距</a></td>
+                 <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_16_tri.php">臺大系統/國北教大校際課程 </a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_11_asy.php">非同步</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_13_eng.php">英語授課</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_12_cha.php">異動</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_08_other.php">其它</a></td>
+               <!--  <td align="center" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''>
+                 <a href="http://couweb3.aca.ntu.edu.tw/course/20.htm" target="_blank">Courses</a></td>-->
+              </tr>
+            </table>
+
+<!--本體-->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function ChangeSelectA(form)
+{
+    var objSelect=form.dpt_sel;
+    selvar=objSelect.options[objSelect.selectedIndex].value;
+    for(i=0;i<form.dptname.length;i++)
+    {
+        if(form.dptname.options[i].value == selvar)
+        {
+            form.dptname.selectedIndex=i;
+            break;
+        }
+    }
+}
+function ChangeSelectB(form)
+{
+    var objSelect=form.dptname;
+    selvar=objSelect.options[objSelect.selectedIndex].value;
+    for(i=0;i<form.dpt_sel.length;i++)
+    {
+        if(form.dpt_sel.options[i].value.charAt(0) == selvar.charAt(0))
+        {
+            form.dpt_sel.selectedIndex=i;
+            break;
+        }
+    }
+    sem_onchange();
+}
+function changeyear(form)
+{
+    var objSelect=form.yearcode;
+    var objdpt=form.dptname;
+    selvar=objdpt.options[objdpt.selectedIndex].value;
+    sem_onchange();
+}
+function daycheck() {
+    var obj_time = document.getElementsByName("alltime");
+    var check1 = document.getElementById("week1");
+    var check2 = document.getElementById("week2");
+    var check3 = document.getElementById("week3");
+    var check4 = document.getElementById("week4");
+    var check5 = document.getElementById("week5");
+    var check6 = document.getElementById("week6");
+    if(check1.checked||check2.checked||check3.checked||check4.checked||check5.checked||check6.checked){
+        obj_time[0].checked = false;
+        obj_time[1].checked = true;
+    }
+}
+//加選方式
+function selcheck() {
+    var obj_sel = document.getElementsByName("allsel");
+    var check1 = document.getElementById("selCode1");
+    var check2 = document.getElementById("selCode2");
+    var check3 = document.getElementById("selCode3");
+  
+    if(check1.checked||check2.checked||check3.checked){
+        obj_sel[0].checked = false;
+        obj_sel[1].checked = true;
+    }
+}
+function procedcheck() {
+    var obj_proced = document.getElementsByName("allproced");
+    var check0 = document.getElementById("proced0");
+    var check1 = document.getElementById("proced1");
+    var check2 = document.getElementById("proced2");
+    var check3 = document.getElementById("proced3");
+    var check4 = document.getElementById("proced4");
+    var checkE = document.getElementById("procedE");
+    var check5 = document.getElementById("proced5");
+    var check6 = document.getElementById("proced6");
+    var check7 = document.getElementById("proced7");
+    var check8 = document.getElementById("proced8");
+    var check9 = document.getElementById("proced9");
+    var checkA = document.getElementById("procedA");
+    var checkB = document.getElementById("procedB");
+    var checkC = document.getElementById("procedC");
+    var checkD = document.getElementById("procedD");
+
+    if(check0.checked||check1.checked||check2.checked||check3.checked||check4.checked||checkE.checked ||check5.checked||check6.checked||check7.checked||check8.checked||check9.checked||checkA.checked ||checkB.checked||checkC.checked||checkD.checked){
+        obj_proced[0].checked = false;
+        obj_proced[1].checked = true;
+    }
+}
+
+function timeradio() {
+    var obj_time = document.getElementsByName("alltime");
+    var check1 = document.getElementById("week1");
+    var check2 = document.getElementById("week2");
+    var check3 = document.getElementById("week3");
+    var check4 = document.getElementById("week4");
+    var check5 = document.getElementById("week5");
+    var check6 = document.getElementById("week6");
+    if(obj_time[0].checked){//不限時間
+        check1.checked = check2.checked = check3.checked = check4.checked = check5.checked = check6.checked = false;
+    }
+}
+//加選方式
+function selectradio() {
+    var obj_sel = document.getElementsByName("allsel");
+    var check1 = document.getElementById("selCode1");
+    var check2 = document.getElementById("selCode2");
+    var check3 = document.getElementById("selCode3");
+  
+    if(obj_sel[0].checked){//不限
+        check1.checked = check2.checked = check3.checked  = false;
+    }
+}
+function procedradio() {
+    var obj_proced = document.getElementsByName("allproced");
+    var check0 = document.getElementById("proced0");
+    var check1 = document.getElementById("proced1");
+    var check2 = document.getElementById("proced2");
+    var check3 = document.getElementById("proced3");
+    var check4 = document.getElementById("proced4");
+    var checkE = document.getElementById("procedE");
+    var check5 = document.getElementById("proced5");
+    var check6 = document.getElementById("proced6");
+    var check7 = document.getElementById("proced7");
+    var check8 = document.getElementById("proced8");
+    var check9 = document.getElementById("proced9");
+    var checkA = document.getElementById("procedA");
+    var checkB = document.getElementById("procedB");
+    var checkC = document.getElementById("procedC");
+    var checkD = document.getElementById("procedD");
+
+    if(obj_proced[0].checked){//不限時間
+        check0.checked = check1.checked = check2.checked = check3.checked = check4.checked = checkE.checked =check5.checked = check6.checked = check7.checked = check8.checked = check9.checked = checkA.checked = checkB.checked = checkC.checked = checkD.checked =  false;
+    }
+}
+function sem_onchange() {
+    var objsel = document.getElementById("select_sem");
+    var obj_dpt = document.getElementById("dptname");
+    var obj_top = document.getElementById("dpt_sel");   
+	var obj_page=document.getElementById("page_cnt");
+    var obj_coursename = document.getElementById("coursename");
+    var obj_teacher = document.getElementById("teachername");
+    var obj_year = document.getElementById("yearcode");
+    var obj_selcode = document.getElementsByName("selcode");
+    var selcode;
+    for (var i=0; i< obj_selcode.length;i++){
+        if (obj_selcode[i].checked) {
+            selcode = obj_selcode[i].value;
+            break;
+        }
+    }   
+    var obj_time = document.getElementsByName("alltime");
+    var alltime;
+    for (var i=0; i< obj_time.length;i++){
+        if (obj_time[i].checked) {
+            alltime = obj_time[i].value;
+            break;
+        }
+    }           
+    var week1=week2=week3=week4=week5=week6="";
+    if(document.getElementById("week1").checked)
+        week1 = document.getElementById("</form).value;
+    if(document.getElementById("week2").checked)
+        week2 = document.getElementById("week2").value;
+    if(document.getElementById("week3").checked)
+        week3 = document.getElementById("week3").value;
+    if(document.getElementById("week4").checked)
+        week4 = document.getElementById("week4").value;
+    if(document.getElementById("week5").checked)
+        week5 = document.getElementById("week5").value;
+    if(document.getElementById("week6").checked)
+        week6 = document.getElementById("week6").value;
+
+     var obj_proced = document.getElementsByName("allproced");
+    var allproced;
+    for (var i=0; i< obj_proced.length;i++){
+        if (obj_proced[i].checked) {
+            allproced = obj_proced[i].value;
+            break;
+        }
+    }           
+    var proced0=proced1=proced2=proced3=proced4=procedE=proced5=proced6=proced7=proced8=proced9=procedA=procedB=procedC=procedD="";
+     if(document.getElementById("proced0").checked)
+        proced0 = document.getElementById("proced0").value;
+     if(document.getElementById("proced1").checked)
+        proced1 = document.getElementById("proced1").value;
+     if(document.getElementById("proced2").checked)
+        proced2 = document.getElementById("proced2").value;
+     if(document.getElementById("proced3").checked)
+        proced3 = document.getElementById("proced3").value;
+     if(document.getElementById("proced4").checked)
+        proced4 = document.getElementById("proced4").value;
+     if(document.getElementById("procedE").checked)
+        procedE = document.getElementById("procedE").value;
+     if(document.getElementById("proced5").checked)
+        proced5 = document.getElementById("proced5").value;
+     if(document.getElementById("proced6").checked)
+        proced6 = document.getElementById("proced6").value;
+     if(document.getElementById("proced7").checked)
+        proced7 = document.getElementById("proced7").value;
+     if(document.getElementById("proced8").checked)
+        proced8 = document.getElementById("proced8").value;
+     if(document.getElementById("proced9").checked)
+        proced9 = document.getElementById("proced9").value;
+     if(document.getElementById("procedA").checked)
+        procedA = document.getElementById("procedA").value;
+     if(document.getElementById("procedB").checked)
+        procedB = document.getElementById("procedB").value;
+     if(document.getElementById("procedC").checked)
+        procedC = document.getElementById("procedC").value;
+     if(document.getElementById("procedD").checked)
+        procedD = document.getElementById("procedD").value;
+    
+	var obj_sel = document.getElementsByName("allsel");
+    var allsel;
+    for (var i=0; i< obj_sel.length;i++){
+        if (obj_sel[i].checked) {
+            allsel = obj_sel[i].value;
+            break;
+        }
+    }           
+ </form selCode1=selCode2=selCode3="";
+    if(document.getElementById("selCode1").checked)
+        selCode1 = document.getElementById("selCode1").value;
+    if(document.getElementById("selCode2").checked)
+        selCode2 = document.getElementById("selCode2").value;
+    if(document.getElementById("selCode3").checked)
+        selCode3 = document.getElementById("selCode3").value;
+
+    var url="search_for_02_dpt.php?current_sem="+objsel.options[objsel.selectedIndex].value+"&coursename="+obj_coursename.value+"&dptname="+obj_dpt.options[obj_dpt.selectedIndex].value+"&dpt_sel="+obj_top.options[obj_top.selectedIndex].value+"&yearcode="+obj_year.options[obj_year.selectedIndex].value+"&teachername="+obj_teacher.value+"&selcode="+selcode+"&alltime="+alltime+"&week1="+week1+"&week2="+week2+"&week3="+week3+"&week4="+week4+"&week5="+week5+"&week6="+week6+"&allproced="+allproced+"&proced0="+proced0+"&proced1="+proced1+"&proced2="+proced2+"&proced3="+proced3+"&proced4="+proced4+"&procedE="+procedE+"&proced5="+proced5+"&proced6="+proced6+"&proced7="+proced7+"&proced8="+proced8+"&proced9="+proced9+"&procedA="+procedA+"&procedB="+procedB+"&procedC="+procedC+"&procedD="+procedD+"&allsel="+allsel+"&selCode1="+selCode1+"&selCode2="+selCode2+"&selCode3="+selCode3+"&page_cnt="+obj_page.value;
+    window.location = url;
+}
+//-->
+</SCRIPT>
+
+<table width="100%" border="1" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" cellpadding="6" bgcolor="#FEEA9A">
+              <tr> 
+                <form name="form1" method="post" action="search_for_02_dpt.php">
+                    <input type="hidden" name="current_sem" value="105-2">                    
+
+                  <td> 
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                            <tr>
+                              <td colspan="3"><b><font color="#CC6633">系所課程查詢</font></b></td>
+                            </tr>
+                            <tr> 
+                              <td width="120" align="right">開課學院：                                </td>
+                                <td width="480" align="left"><select id= "dpt_sel" name="dpt_sel" onChange = "ChangeSelectA(this.form)">
+                                  <option value="0">全部</option>
+                                  <option value="1000" selected>1000 文學院                                     </option>
+<option value="2000">2000 理學院                                     </option>
+<option value="3000">3000 社會科學院                                   </option>
+<option value="4000">4000 醫學院                                     </option>
+<option value="5000">5000 工學院                                     </option>
+<option value="6000">6000 生物資源暨農學院                                </option>
+<option value="7000">7000 管理學院                                    </option>
+<option value="8000">8000 公共衛生學院                                  </option>
+<option value="9000">9000 電機資訊學院                                  </option>
+<option value="A000">A000 法律學院                                    </option>
+<option value="B000">B000 生命科學院                                   </option>
+<option value="H000">H000 共同教育中心                                  </option>
+<option value="J000">J000 產業研發專班                                  </option>
+<option value="K000">K000 三校聯盟                                    </option>
+                                </select></td>
+                                <td align="left">&nbsp;</td>
+                            </tr>
+                                <tr>
+                                <td width="120" align="right">
+                                開課系所：                                 </td>
+                                <td width="480"><select id="dptname" name="dptname" onChange = "ChangeSelectB(this.form)">
+                                  <option value="0">全部</option>
+                                  <option value="0020">0020 體育室                                     </option>
+<option value="0030">0030 軍訓室                                     </option>
+<option value="0040">0040 外語教學暨資源中心                               </option>
+<option value="0050">0050 學務處課外活動組                                </option>
+<option value="1000">1000 文學院                                     </option>
+<option value="1010">1010 中國文學系                                   </option>
+<option value="1011">1011 中國文學系國際學生學士班                            </option>
+<option value="1020">1020 外國語文學系                                  </option>
+<option value="1030">1030 歷史學系                                    </option>
+<option value="1040">1040 哲學系                                     </option>
+<option value="1050">1050 人類學系                                    </option>
+<option value="1060">1060 圖書資訊學系                                  </option>
+<option value="1070" selected>1070 日本語文學系                                  </option>
+<option value="1080">1080 應用英語學系                                  </option>
+<option value="1090">1090 戲劇學系                                    </option>
+<option value="1210">1210 中國文學研究所                                 </option>
+<option value="1220">1220 外國語文學研究所                                </option>
+<option value="1230">1230 歷史學研究所                                  </option>
+<option value="1240">1240 哲學研究所                                   </option>
+<option value="1250">1250 人類學研究所                                  </option>
+<option value="1260">1260 圖書資訊學研究所                                </option>
+<option value="1270">1270 日本語文學研究所                                </option>
+<option value="1290">1290 戲劇學研究所                                  </option>
+<option value="1410">1410 藝術史研究所                                  </option>
+<option value="1420">1420 語言學研究所                                  </option>
+<option value="1440">1440 音樂學研究所                                  </option>
+<option value="1450">1450 臺灣文學研究所                                 </option>
+<option value="1460">1460 華語教學碩士學位學程                              </option>
+<option value="1470">1470 翻譯碩士學位學程                                </option>
+<option value="2000">2000 理學院                                     </option>
+<option value="2010">2010 數學系                                     </option>
+<option value="2020">2020 物理學系                                    </option>
+<option value="2030">2030 化學系                                     </option>
+<option value="2040">2040 地質科學系                                   </option>
+<option value="2050">2050 動物學系                                    </option>
+<option value="2051">2051 動物生物組                                   </option>
+<option value="2052">2052 漁業生物組                                   </option>
+<option value="2060">2060 植物學系                                    </option>
+<option value="2070">2070 心理學系                                    </option>
+<option value="2080">2080 地理環境資源學系                                </option>
+<option value="2090">2090 大氣科學系                                   </option>
+<option value="2210">2210 數學研究所                                   </option>
+<option value="2220">2220 物理學研究所                                  </option>
+<option value="2230">2230 化學研究所                                   </option>
+<option value="2231">2231 化學所化學組                                  </option>
+<option value="2232">2232 化學所化學生物學組                               </option>
+<option value="2240">2240 地質科學研究所                                 </option>
+<option value="2241">2241 地質組                                     </option>
+<option value="2242">2242 應用地質組                                   </option>
+<option value="2250">2250 動物學研究所                                  </option>
+<option value="2260">2260 植物學研究所                                  </option>
+<option value="2270">2270 心理學研究所                                  </option>
+<option value="2271">2271 一般心理學組                                  </option>
+<option value="2272">2272 臨床心理學組                                  </option>
+<option value="2280">2280 地理環境資源學研究所                              </option>
+<option value="2290">2290 大氣科學研究所                                 </option>
+<option value="2410">2410 海洋研究所                                   </option>
+<option value="2411">2411 海洋物理組                                   </option>
+<option value="2412">2412 海洋生物及漁業組                                </option>
+<option value="2413">2413 海洋地質及地球物理                               </option>
+<option value="2414">2414 海洋化學組                                   </option>
+<option value="2440">2440 天文物理研究所                                 </option>
+<option value="2450">2450 應用物理學研究所                                </option>
+<option value="2460">2460 應用數學科學研究所                               </option>
+<option value="2470">2470 氣候變遷與永續發展國際學位學程                         </option>
+<option value="3000">3000 社會科學院                                   </option>
+<option value="3020">3020 政治學系                                    </option>
+<option value="3021">3021 政治理論組                                   </option>
+<option value="3022">3022 國際關係組                                   </option>
+<option value="3023">3023 公共行政組                                   </option>
+<option value="3030">3030 經濟學系                                    </option>
+<option value="3050">3050 社會學系                                    </option>
+<option value="3051">3051 社會學組                                    </option>
+<option value="3052">3052 社會工作組                                   </option>
+<option value="3100">3100 社會工作學系                                  </option>
+<option value="3220">3220 政治學研究所                                  </option>
+<option value="3230">3230 經濟學研究所                                  </option>
+<option value="3250">3250 社會學研究所                                  </option>
+<option value="3300">3300 社會工作學研究所                                </option>
+<option value="3410">3410 國家發展研究所                                 </option>
+<option value="3420">3420 新聞研究所                                   </option>
+<option value="3430">3430 公共事務研究所                                 </option>
+<option value="4000">4000 醫學院                                     </option>
+<option value="4010">4010 醫學系                                     </option>
+<option value="4020">4020 牙醫學系                                    </option>
+<option value="4030">4030 藥學系                                     </option>
+<option value="4031">4031 藥學系六年制                                  </option>
+<option value="4040">4040 醫學檢驗暨生物技術學系(原醫事技術學系)                    </option>
+<option value="4060">4060 護理學系                                    </option>
+<option value="4080">4080 物理治療學系                                  </option>
+<option value="4090">4090 職能治療學系                                  </option>
+<option value="4200">4200 醫學院暨公共衛生學院共同課程                          </option>
+<option value="4210">4210 臨床醫學研究所                                 </option>
+<option value="4220">4220 臨床牙醫學研究所                                </option>
+<option value="4230">4230 藥學研究所                                   </option>
+<option value="4231">4231 藥學系博士班藥物科技組                             </option>
+<option value="4232">4232 藥學系博士班分子醫藥組                             </option>
+<option value="4240">4240 醫事技術學研究所                                </option>
+<option value="4260">4260 護理學研究所                                  </option>
+<option value="4280">4280 物理治療學研究所                                </option>
+<option value="4290">4290 職能治療學研究所                                </option>
+<option value="4410">4410 生理學研究所                                  </option>
+<option value="4420">4420 生化學研究所                                  </option>
+<option value="4430">4430 藥理學研究所                                  </option>
+<option value="4440">4440 病理學研究所                                  </option>
+<option value="4450">4450 微生物學研究所                                 </option>
+<option value="4451">4451 微生物及免疫學組                                </option>
+<option value="4452">4452 寄生蟲組                                    </option>
+<option value="4460">4460 解剖學暨細胞生物學研究所                            </option>
+<option value="4470">4470 毒理學研究所                                  </option>
+<option value="4480">4480 分子醫學研究所                                 </option>
+<option value="4490">4490 免疫學研究所                                  </option>
+<option value="4500">4500 口腔生物科學研究所                               </option>
+<option value="4510">4510 臨床藥學研究所                                 </option>
+<option value="4520">4520 法醫學研究所                                  </option>
+<option value="4530">4530 腫瘤醫學研究所                                 </option>
+<option value="4540">4540 腦與心智科學研究所                               </option>
+<option value="4550">4550 基因體暨蛋白體醫學研究所                            </option>
+<option value="4560">4560 轉譯醫學博士學位學程                              </option>
+<option value="4570">4570 醫學教育暨生醫倫理研究所                            </option>
+<option value="4580">4580 醫療器材與醫學影像研究所                            </option>
+<option value="5000">5000 工學院                                     </option>
+<option value="5010">5010 土木工程學系                                  </option>
+<option value="5020">5020 機械工程學系                                  </option>
+<option value="5040">5040 化學工程學系                                  </option>
+<option value="5050">5050 工程科學及海洋工程學系                             </option>
+<option value="5070">5070 材料科學與工程學系                               </option>
+<option value="5210">5210 土木工程學研究所                                </option>
+<option value="5211">5211 大地工程組                                   </option>
+<option value="5212">5212 結構工程組                                   </option>
+<option value="5213">5213 水利工程組                                   </option>
+<option value="5215">5215 交通工程組                                   </option>
+<option value="5216">5216 電腦輔助工程組                                 </option>
+<option value="5217">5217 營建工程與管理組                                </option>
+<option value="5220">5220 機械工程學研究所                                </option>
+<option value="5221">5221 流體力學組                                   </option>
+<option value="5223">5223 熱學組                                     </option>
+<option value="5224">5224 航空工程組                                   </option>
+<option value="5225">5225 固體力學組                                   </option>
+<option value="5226">5226 設計組                                     </option>
+<option value="5227">5227 製造組                                     </option>
+<option value="5228">5228 系統控制組                                   </option>
+<option value="5240">5240 化學工程學研究所                                </option>
+<option value="5250">5250 工程科學及海洋工程學研究所                           </option>
+<option value="5270">5270 材料科學與工程學研究所                             </option>
+<option value="5410">5410 環境工程學研究所                                </option>
+<option value="5430">5430 應用力學研究所                                 </option>
+<option value="5440">5440 建築與城鄉研究所                                </option>
+<option value="5460">5460 工業工程學研究所                                </option>
+<option value="5480">5480 醫學工程學研究所                                </option>
+<option value="5490">5490 高分子科學與工程學研究所                            </option>
+<option value="5500">5500 綠色永續材料與精密元件博士學位學程                       </option>
+<option value="6000">6000 生物資源暨農學院                                </option>
+<option value="6010">6010 農藝學系                                    </option>
+<option value="6020">6020 生物環境系統工程學系                              </option>
+<option value="6030">6030 農業化學系                                   </option>
+<option value="6031">6031 土壤肥料組                                   </option>
+<option value="6032">6032 農產製造組                                   </option>
+<option value="6040">6040 植物病蟲害學系                                 </option>
+<option value="6050">6050 森林環境暨資源學系                               </option>
+<option value="6051">6051 育林組                                     </option>
+<option value="6052">6052 資源管理組                                   </option>
+<option value="6053">6053 森林工業組                                   </option>
+<option value="6054">6054 森林資源保育組                                 </option>
+<option value="6060">6060 動物科學技術學系                                </option>
+<option value="6070">6070 農業經濟學系                                  </option>
+<option value="6080">6080 園藝暨景觀學系                                 </option>
+<option value="6090">6090 獸醫學系                                    </option>
+<option value="6100">6100 生物產業傳播暨發展學系                             </option>
+<option value="6101">6101 推廣教育組                                   </option>
+<option value="6102">6102 鄉村社會組                                   </option>
+<option value="6110">6110 生物產業機電工程學系                              </option>
+<option value="6120">6120 昆蟲學系                                    </option>
+<option value="6130">6130 植物病理與微生物學系                              </option>
+<option value="6210">6210 農藝學研究所                                  </option>
+<option value="6211">6211 作物科學組                                   </option>
+<option value="6212">6212 生物統計學組                                  </option>
+<option value="6220">6220 生物環境系統工程學研究所                            </option>
+<option value="6230">6230 農業化學研究所                                 </option>
+<option value="6234">6234 土壤環境與植物營養組                              </option>
+<option value="6235">6235 生物工業化學組                                 </option>
+<option value="6236">6236 生物化學組                                   </option>
+<option value="6237">6237 營養科學組                                   </option>
+<option value="6238">6238 微生物學組                                   </option>
+<option value="6250">6250 森林環境暨資源學研究所                             </option>
+<option value="6260">6260 動物科學技術學研究所                              </option>
+<option value="6270">6270 農業經濟學研究所                                </option>
+<option value="6280">6280 園藝學研究所                                  </option>
+<option value="6281">6281 園藝作物組                                   </option>
+<option value="6282">6282 園產品處理及加工組                               </option>
+<option value="6283">6283 造園組                                     </option>
+<option value="6290">6290 獸醫學研究所                                  </option>
+<option value="6300">6300 生物產業傳播暨發展學研究所                           </option>
+<option value="6310">6310 生物產業機電工程學所                              </option>
+<option value="6320">6320 昆蟲學研究所                                  </option>
+<option value="6330">6330 植物病理與微生物學研究所                            </option>
+<option value="6410">6410 食品科技研究所                                 </option>
+<option value="6420">6420 生物科技研究所                                 </option>
+<option value="6430">6430 臨床動物醫學研究所                               </option>
+<option value="6440">6440 分子暨比較病理生物學研究所                           </option>
+<option value="6450">6450 植物醫學碩士學位學程                              </option>
+<option value="7000">7000 管理學院                                    </option>
+<option value="7010">7010 工商管理學系                                  </option>
+<option value="7011">7011 企業管理組                                   </option>
+<option value="7012">7012 科技管理組                                   </option>
+<option value="7013">7013 工商管理系企業管理組英文專班                          </option>
+<option value="7020">7020 會計學系                                    </option>
+<option value="7030">7030 財務金融學系                                  </option>
+<option value="7040">7040 國際企業學系                                  </option>
+<option value="7050">7050 資訊管理學系                                  </option>
+<option value="7060">7060 企業管理學系                                  </option>
+<option value="7220">7220 會計學研究所                                  </option>
+<option value="7230">7230 財務金融學研究所                                </option>
+<option value="7240">7240 國際企業學研究所                                </option>
+<option value="7250">7250 資訊管理學研究所                                </option>
+<option value="7400">7400 高階管理碩士專班(EMBA)                          </option>
+<option value="7410">7410 商學研究所                                   </option>
+<option value="7420">7420 知識管理組                                   </option>
+<option value="7430">7430 管理學院高階公共管理組                             </option>
+<option value="7440">7440 管理學院會計與管理決策組                            </option>
+<option value="7450">7450 管理學院財務金融組                               </option>
+<option value="7460">7460 管理學院國際企業管理組                             </option>
+<option value="7470">7470 管理學院資訊管理組                               </option>
+<option value="7480">7480 管理學院商學組                                 </option>
+<option value="7490">7490 管理學院企業管理碩士專班                            </option>
+<option value="7500">7500 臺大-復旦EMBA                               </option>
+<option value="7510">7510 創業創新管理碩士在職專班                            </option>
+<option value="8000">8000 公共衛生學院                                  </option>
+<option value="8010">8010 公共衛生學系                                  </option>
+<option value="8410">8410 職業醫學與工業衛生研究所                            </option>
+<option value="8420">8420 流行病學研究所                                 </option>
+<option value="8430">8430 醫療機構管理研究所                               </option>
+<option value="8440">8440 環境衛生研究所                                 </option>
+<option value="8470">8470 公共衛生碩士學位學程                              </option>
+<option value="8480">8480 健康政策與管理研究所                              </option>
+<option value="8481">8481 健康促進組                                   </option>
+<option value="8482">8482 健康服務與產業組                                </option>
+<option value="8490">8490 流行病學與預防醫學研究所                            </option>
+<option value="8491">8491 流預所流行病學組                                </option>
+<option value="8492">8492 流預所生物醫學統計組                              </option>
+<option value="8493">8493 流預所預防醫學組                                </option>
+<option value="8500">8500 健康行為與社區科學研究所                            </option>
+<option value="9000">9000 電機資訊學院                                  </option>
+<option value="9010">9010 電機工程學系                                  </option>
+<option value="9020">9020 資訊工程學系                                  </option>
+<option value="9210">9210 電機工程學研究所                                </option>
+<option value="9220">9220 資訊工程學研究所                                </option>
+<option value="9410">9410 光電工程學研究所                                </option>
+<option value="9420">9420 電信工程學研究所                                </option>
+<option value="9430">9430 電子工程學研究所                                </option>
+<option value="9440">9440 資訊網路與多媒體研究所                             </option>
+<option value="9450">9450 生醫電子與資訊學研究所                             </option>
+<option value="A000">A000 法律學院                                    </option>
+<option value="A010">A010 法律學系                                    </option>
+<option value="A011">A011 法學組                                     </option>
+<option value="A012">A012 司法組                                     </option>
+<option value="A013">A013 財法組                                     </option>
+<option value="A210">A210 法律研究所                                   </option>
+<option value="A408">A408 教學發展中心                                  </option>
+<option value="A410">A410 科際整合法律學研究所                              </option>
+<option value="B000">B000 生命科學院                                   </option>
+<option value="B010">B010 生命科學系                                   </option>
+<option value="B020">B020 生化科技學系                                  </option>
+<option value="B210">B210 生命科學所                                   </option>
+<option value="B220">B220 生化科技研究所                                 </option>
+<option value="B420">B420 植物科學研究所                                 </option>
+<option value="B430">B430 分子與細胞生物學研究所                             </option>
+<option value="B440">B440 生態學與演化生物學研究所                            </option>
+<option value="B450">B450 漁業科學研究所                                 </option>
+<option value="B460">B460 生化科學研究所                                 </option>
+<option value="B470">B470 微生物與生化學研究所                              </option>
+<option value="B471">B471 生物工業組                                   </option>
+<option value="B472">B472 生物化學組                                   </option>
+<option value="B473">B473 營養科學組                                   </option>
+<option value="B474">B474 微生物學組                                   </option>
+<option value="B480">B480 基因體與系統生物學學位學程                           </option>
+<option value="G010">G010 台北教育大學                                  </option>
+<option value="H000">H000 共同教育中心                                  </option>
+<option value="H010">H010 通識教育組                                   </option>
+<option value="H020">H020 共同教育組                                   </option>
+<option value="H410">H410 統計碩士學位學程                                </option>
+<option value="H420">H420 運動設施與健康管理碩士學位學程                         </option>
+<option value="J000">J000 產業研發專班                                  </option>
+<option value="J100">J100 電機產業專班                                  </option>
+<option value="J110">J110 資訊產業專班                                  </option>
+<option value="K000">K000 三校聯盟                                    </option>
+<option value="K010">K010 國立臺灣師範大學                                </option>
+<option value="K020">K020 國立臺灣科技大學                                </option>
+<option value="K030">K030 國立臺北教育大學                                </option>
+<option value="Q010">Q010 寫作教學中心                                  </option>
+<option value="Q020">Q020 生命教育研發育成中心                              </option>
+<option value="Z010">Z010 創新設計學院                                  </option>
+                                </select></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr> 
+                              <td width="120" align="right">年級分類：                                </td>
+                              <td width="480" align="left"><select id="yearcode" name="yearcode">
+                                <option value="0">全部</option>
+                                <option value="1">1 年級                          </option>
+<option value="2">2 年級                          </option>
+<option value="3">3 年級                          </option>
+<option value="4">4 年級                          </option>
+<option value="C">2,3,4 年級選修課程              </option>
+                              </select>
+    
+<input type="radio" id="selcode" name="selcode" value="3" >必修<input type="radio" id="selcode" name="selcode" value="7" >選修<input name="selcode" type="radio" id="selcode" value="-1" checked checked>全部 
+                                </td>
+
+                              <td align="left">&nbsp;</td>
+                            </tr>
+                            
+
+
+                      
+                      <tr><td width="120" align="right">課程名稱：</td>
+                        <td width="480">
+                        <input type="text" name="coursename" id="coursename" value = "" size="12" >
+                        教師名稱：<input id="teachername" type="text" name="teachername" value = "" size="12">                        </td>
+                        <td>&nbsp;</td>
+
+                            <tr> 
+                              <td width="120" align="right">上課時間：                                </td>
+                              <td width="480" align="left"><input name="alltime" type="radio" onClick="timeradio()" value="yes" checked checked language=javascript>
+                                 不限<input name="alltime" type="radio" value="no"  language=javascript onClick="timeradio()">
+限定  <input id="week1" name="week1" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+週一<input id="week2" name="week2" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+週二<input id="week3" name="week3" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+週三<input id="week4" name="week4" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+週四<input id="week5" name="week5" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+週五<input id="week6" name="week6" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+週六</td>
+                              <td align="left">&nbsp;</td>
+                            </tr>
+                             <tr> 
+                  <td width="120" align="right">節次：</td>
+                  <td width="480">
+                        <input name="allproced" type="radio" onClick="procedradio()" value="yes" checked checked language=javascript> 不限                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                 <tr> 
+                  <td width="120" align="right">　　　　　</td>
+                  <td ><input name="allproced" type="radio" value="no"  language=javascript onClick="procedradio()">
+                    限定                                             <input id="proced0" name="proced0" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             0 7:10~8:00                                             <input id="proced1" name="proced1" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             1 8:10~9:00                                             <input id="proced2" name="proced2" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             2 9:10~10:00                                             <input id="proced3" name="proced3" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             3 10:20~11:10                                             <input id="proced4" name="proced4" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             4 11:20~12:10                                            
+                                             <input id="proced5" name="proced5" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             5 12:20~13:10                                             <input id="proced6" name="proced6" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             6 13:20~14:10   <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                 <input id="proced7" name="proced7" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             7 14:20~15:10                                             <input id="proced8" name="proced8" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             8 15:30~16:20                                             <input id="proced9" name="proced9" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             9 16:30~17:20                                              <input id="procedE" name="procedE" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             10 17:30~18:20                                             <input id="procedA" name="procedA" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             A 18:25~19:15                                             <input id="procedB" name="procedB" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             B 19:20~20:10                                             <input id="procedC" name="procedC" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             C 20:15~21:05                                             <input id="procedD" name="procedD" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             D 21:10~22:00
+                             </tr>
+                                 <tr> 
+                  <td width="120" align="right">加選方式:</td>
+                  <td width="480">
+                        <input name="allsel" type="radio" onClick="selectradio()" value="yes" checked checked language=javascript> 不限                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> 
+                  <td width="120" align="right">　　　　　</td>
+                  <td width="700"><input name="allsel" type="radio" value="no"  language=javascript onClick="selectradio()">
+                    限定                      <input id="selCode1" name="selCode1" type="checkbox" value="1"  language=javascript onClick="selcheck()">
+                    第1類                    <input id="selCode2" name="selCode2" type="checkbox" value="1"  language=javascript onClick="selcheck()">
+                    第2類                    <input id="selCode3" name="selCode3" type="checkbox" value="1"  language=javascript onClick="selcheck()">
+                    第3類                  </td>
+                  <td>&nbsp;</td>
+                 <tr>
+                  <td width="120" align="right" colspan="3">每頁顯示筆數
+                    <input type="text" id="page_cnt" name="page_cnt" value="9999" size="4">
+                  </td>
+                  <td width="480" align="left">
+                    
+                     <input type="submit" name="Submit22" value="查詢"></td>
+                  
+                </tr></form>
+ 
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+<table width="100%" border="0">
+  <tr>
+    <td>
+    <img src="images/info.gif" alt="" name="NOTE" width="20" height="20" align="absmiddle">請詳讀<a href="../note/105-2/1070.htm" target="_blank">日本語文學系選課注意事項</a>後再選課    </td>
+  </tr>
+</table>
+
+      <table width="100%" border="0" cellpadding="4">
+        <tr> 
+          <td>
+           <SELECT id=select_sem name=select_sem LANGUAGE=javascript onChange="return sem_onchange()">
+          
+test
+   
+        <option selected value="105-2">105-2</option>
+        <option  value="105-1">105-1</option>
+        <option  value="104-2">104-2</option>
+        <option  value="104-1">104-1</option>
+        <option  value="103-2">103-2</option>
+        <option  value="103-1">103-1</option>
+        <option  value="102-2">102-2</option>
+        <option  value="102-1">102-1</option>
+        <option  value="101-2">101-2</option>
+        <option  value="101-1">101-1</option>
+        <option  value="100-2">100-2</option>
+        <option  value="100-1">100-1</option>
+        <option  value="99-2">99-2</option>
+        <option  value="99-1">99-1</option>
+        <option  value="98-2">98-2</option>
+        <option  value="98-1">98-1</option>
+        <option  value="97-2">97-2</option>
+        <option  value="97-1">97-1</option>
+        <option  value="96-2">96-2</option>
+        <option  value="96-1">96-1</option>
+        <option  value="95-2">95-2</option>
+        <option  value="95-1">95-1</option>
+        <option  value="94-2">94-2</option>
+        <option  value="94-1">94-1</option>
+        <option  value="93-2">93-2</option>
+        <option  value="93-1">93-1</option>
+        
+            </select>
+          共查詢到<font color="#CC0033"> <b>57</b> </font>筆課程：</td>
+          <td align='right'>
+&lt;&lt;上一頁　　下一頁&gt;&gt;　<select name="jump" onChange="location.href=this.options[this.selectedIndex].value;">
+<option value='?alltime=yes&allproced=yes&selcode=-1&dptname=1070&coursename=&teachername=&current_sem=105-2&yearcode=0&op=&startrec=0&week1=&week2=&week3=&week4=&week5=&week6=&proced0=&proced1=&proced2=&proced3=&proced4=&procedE=&proced5=&proced6=&proced7=&proced8=&proced9=&procedA=&procedB=&procedC=&procedD=&allsel=yes&selCode1=&selCode2=&selCode3=&page_cnt=9999' selected>第1頁</option></select>   
+          </td>
+        </tr>
+      </table>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var window_schedule = '';
+
+function schedule_add(cid)
+{
+    if (!window_schedule.closed && window_schedule.location)
+        window_schedule.location.href = 'myschedule.php?add='+cid;
+    else
+        window_schedule=window.open('myschedule.php?add='+cid,'schedule','height=500,width=730,scrollbars=yes,resizable=yes');
+        
+    if (window.focus) {window_schedule.focus()}
+    return false;
+}
+
+</SCRIPT> 
+<table width="100%" border="1" cellspacing="1" cellpadding="1" bordercolorlight="#CCCCCC" bordercolordark="#CCCCCC">
+<tr bgcolor="#DDEDFF" align="center"><td height="25">流水號</td><td>授課對象</td><td>課號</td><td>班次</td><td>課程名稱<br><font color=red>查看課程大綱，請點選課程名稱</font><td>學分</td><td>課程識別碼</td><td>全/半年</td><td>必/選修</td><td>授課教師</td><td>加選<br>方式</td><td>時間<br>教室</td><td>總人數</td><td width=15%>選課限制條件</td><td width=15%>備註</td><td width=3%>課程網頁</td><td width=10%>本學期<br>我預計<br>要選的<br>課程</td></tr>
+<tr align="center"><TD>&nbsp;</TD><TD>日文系</TD><TD>Common1002</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=000 10002&class=&dpt_code=1070&ser_no=&semester=105-2&lang=CH">國文領域下</A></TD><TD>3</TD><TD>000 10002</TD><TD>全年</TD><TD>必修</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>五7,8,9(請洽系所辦)  </TD><TD>100</TD><TD ALIGN="left" VALIGN="TOP">本校修課人數上限：100人</TD><TD ALIGN="left" VALIGN="TOP">參閱國文領域課程時間表</TD><TD>&nbsp; </TD><td>&nbsp;</td></tr>
+<tr align="center"><TD>&nbsp;</TD><TD>日文系</TD><TD>Common1004</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=000 30002&class=&dpt_code=1070&ser_no=&semester=105-2&lang=CH">英文領域下</A></TD><TD>3</TD><TD>000 30002</TD><TD>全年</TD><TD>必修</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>40</TD><TD ALIGN="left" VALIGN="TOP">本校修課人數上限：40人</TD><TD ALIGN="left" VALIGN="TOP">參閱共同必修課程時間表</TD><TD>&nbsp; </TD><td>&nbsp;</td></tr>
+<tr align="center"><TD>29515</TD><TD>日文系</TD><TD>JpnL1000</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00110&class=01&dpt_code=1070&ser_no=29515&semester=105-2&lang=CH">服務學習一</A></TD><TD>&nbsp;</TD><TD>107 00110</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107041">石川隆男</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>15</TD><TD ALIGN="left" VALIGN="TOP">限學號雙號 且 限本系所學生(含輔系、雙修生) 且 限學號末二位除３餘１,本校修課人數上限：15人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_1_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('29515')">加入</a></td></tr>
+<tr align="center"><TD>62387</TD><TD>日文系</TD><TD>JpnL1000</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00110&class=02&dpt_code=1070&ser_no=62387&semester=105-2&lang=CH">服務學習一</A></TD><TD>&nbsp;</TD><TD>107 00110</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107075">&#36795;明壽</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>15</TD><TD ALIGN="left" VALIGN="TOP">限學號雙號 且 限本系所學生(含輔系、雙修生) 且 限學號末二位除３餘２,本校修課人數上限：15人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_1_02"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('62387')">加入</a></td></tr>
+<tr align="center"><TD>50290</TD><TD>日文系</TD><TD>JpnL1000</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00110&class=03&dpt_code=1070&ser_no=50290&semester=105-2&lang=CH">服務學習一</A></TD><TD>&nbsp;</TD><TD>107 00110</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107027">朱秋而</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>15</TD><TD ALIGN="left" VALIGN="TOP">限學號雙號 且 限本系所學生(含輔系、雙修生) 且 限學號末二位被３整除,本校修課人數上限：15人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_1_03"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('50290')">加入</a></td></tr>
+<tr align="center"><TD>28113</TD><TD>日文系</TD><TD>JpnL2000</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00220&class=01&dpt_code=1070&ser_no=28113&semester=105-2&lang=CH">服務學習二</A></TD><TD>&nbsp;</TD><TD>107 00220</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107075">&#36795;明壽</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>15</TD><TD ALIGN="left" VALIGN="TOP">限學號單號 且 限本系所學生(含輔系、雙修生) 且 限學號末二位除３餘１ 且 限學士班二年級以上,本校修課人數上限：15人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_2_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('28113')">加入</a></td></tr>
+<tr align="center"><TD>84625</TD><TD>日文系</TD><TD>JpnL2000</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00220&class=02&dpt_code=1070&ser_no=84625&semester=105-2&lang=CH">服務學習二</A></TD><TD>&nbsp;</TD><TD>107 00220</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107041">石川隆男</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>15</TD><TD ALIGN="left" VALIGN="TOP">限學號單號 且 限本系所學生(含輔系、雙修生) 且 限學士班二年級以上 且 限學號末二位除３餘２,本校修課人數上限：15人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_2_02"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('84625')">加入</a></td></tr>
+<tr align="center"><TD>73793</TD><TD>日文系</TD><TD>JpnL2000</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00220&class=03&dpt_code=1070&ser_no=73793&semester=105-2&lang=CH">服務學習二</A></TD><TD>&nbsp;</TD><TD>107 00220</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107020">服部美貴</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>15</TD><TD ALIGN="left" VALIGN="TOP">限學號單號 且 限本系所學生(含輔系、雙修生) 且 限學士班二年級以上 且 限學號末二位被３整除,本校修課人數上限：15人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_2_03"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('73793')">加入</a></td></tr>
+<tr align="center"><TD>16280</TD><TD>日文系</TD><TD>JpnL3000</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00330&class=01&dpt_code=1070&ser_no=16280&semester=105-2&lang=CH">服務學習三</A></TD><TD>&nbsp;</TD><TD>107 00330</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107020">服部美貴</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP">限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生) 且 限學士班三年級以上,本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">參加畢業公演或週五12節圖書館資料整理。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_3_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('16280')">加入</a></td></tr>
+<tr align="center"><TD>64376</TD><TD>日文系</TD><TD>JpnL3000</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00330&class=02&dpt_code=1070&ser_no=64376&semester=105-2&lang=CH">服務學習三</A></TD><TD>&nbsp;</TD><TD>107 00330</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107012">林慧君</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP">限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生) 且 限學士班三年級以上,本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">參加畢業公演或週五12節圖書館資料整理。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_3_02"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('64376')">加入</a></td></tr>
+<tr align="center"><TD>76132</TD><TD>日文系</TD><TD>JpnL3000</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 00330&class=03&dpt_code=1070&ser_no=76132&semester=105-2&lang=CH">服務學習三</A></TD><TD>&nbsp;</TD><TD>107 00330</TD><TD>半年</TD><TD>必修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107012">林慧君</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP">限學號末二位被３整除 且 限本系所學生(含輔系、雙修生) 且 限學士班三年級以上,本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">參加畢業公演或週五12節圖書館資料整理。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052sv107_3_03"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('76132')">加入</a></td></tr>
+<tr align="center"><TD>50910</TD><TD>日文系</TD><TD>JpnL1008</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10112&class=&dpt_code=1070&ser_no=50910&semester=105-2&lang=CH">初級日語下</A></TD><TD>4</TD><TD>107 10112</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107030">林立萍</A></TD><TD>2</TD><TD>二8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普201)</a>四3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普204)</a></TD><TD>70</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10112&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生),本校修課人數上限：70人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL1008_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('50910')">加入</a></td></tr>
+<tr align="center"><TD>70745</TD><TD>日文系</TD><TD>JpnL1012</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10222&class=01&dpt_code=1070&ser_no=70745&semester=105-2&lang=CH">日語會話一下</A></TD><TD>4</TD><TD>107 10222</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107010">范淑文</A></TD><TD>2</TD><TD>一1,2<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1032   target=_new >(外教205)</a>二5,6<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1032   target=_new >(外教205)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10222&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('70745')">加入</a></td></tr>
+<tr align="center"><TD>11753</TD><TD>日文系</TD><TD>JpnL1012</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10222&class=02&dpt_code=1070&ser_no=11753&semester=105-2&lang=CH">日語會話一下</A></TD><TD>4</TD><TD>107 10222</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107075">&#36795;明壽</A></TD><TD>2</TD><TD>三8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共402)</a>四8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共404)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10222&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL1012_02"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('11753')">加入</a></td></tr>
+<tr align="center"><TD>27129</TD><TD>日文系</TD><TD>JpnL1012</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10222&class=03&dpt_code=1070&ser_no=27129&semester=105-2&lang=CH">日語會話一下</A></TD><TD>4</TD><TD>107 10222</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107020">服部美貴</A></TD><TD>2</TD><TD>一8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共302)</a>三3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共206)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10222&lang=CH">本課有先修科目規定</A>,限學號末二位被３整除 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('27129')">加入</a></td></tr>
+<tr align="center"><TD>38490</TD><TD>日文系</TD><TD>JpnL1014</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10312&class=01&dpt_code=1070&ser_no=38490&semester=105-2&lang=CH">日文習作一下</A></TD><TD>2</TD><TD>107 10312</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107069">洪瑟君</A></TD><TD>2</TD><TD>三8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共302)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10312&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL1014_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('38490')">加入</a></td></tr>
+<tr align="center"><TD>47141</TD><TD>日文系</TD><TD>JpnL1014</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10312&class=02&dpt_code=1070&ser_no=47141&semester=105-2&lang=CH">日文習作一下</A></TD><TD>2</TD><TD>107 10312</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107027">朱秋而</A></TD><TD>2</TD><TD>三3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共306)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10312&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('47141')">加入</a></td></tr>
+<tr align="center"><TD>15999</TD><TD>日文系</TD><TD>JpnL1014</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10312&class=03&dpt_code=1070&ser_no=15999&semester=105-2&lang=CH">日文習作一下</A></TD><TD>2</TD><TD>107 10312</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107012">林慧君</A></TD><TD>2</TD><TD>二6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共302)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10312&lang=CH">本課有先修科目規定</A>,限學號末二位被３整除 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL1014_03"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('15999')">加入</a></td></tr>
+<tr align="center"><TD>63013</TD><TD>日文系</TD><TD>JpnL1016</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10402&class=01&dpt_code=1070&ser_no=63013&semester=105-2&lang=CH">日語聽講實習下</A></TD><TD>2</TD><TD>107 10402</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107036">曹景惠</A></TD><TD>2</TD><TD>三3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1032   target=_new >(外教101)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10402&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。需繳語言實習費600元。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('63013')">加入</a></td></tr>
+<tr align="center"><TD>81646</TD><TD>日文系</TD><TD>JpnL1016</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10402&class=02&dpt_code=1070&ser_no=81646&semester=105-2&lang=CH">日語聽講實習下</A></TD><TD>2</TD><TD>107 10402</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107049">黃鈺涵</A></TD><TD>2</TD><TD>二6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1032   target=_new >(外教101)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10402&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。需繳語言實習費600元。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL1016_02"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('81646')">加入</a></td></tr>
+<tr align="center"><TD>59702</TD><TD>日文系</TD><TD>JpnL1016</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10402&class=03&dpt_code=1070&ser_no=59702&semester=105-2&lang=CH">日語聽講實習下</A></TD><TD>2</TD><TD>107 10402</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107030">林立萍</A></TD><TD>2</TD><TD>一6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1032   target=_new >(外教102)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 10402&lang=CH">本課有先修科目規定</A>,限學號末二位被３整除 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。需繳語言實習費600元。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL1016_03"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('59702')">加入</a></td></tr>
+<tr align="center"><TD>24697</TD><TD>日文系</TD><TD>JpnL3050</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 10520&class=&dpt_code=1070&ser_no=24697&semester=105-2&lang=CH">商用日文</A></TD><TD>2</TD><TD>107 10520</TD><TD>半年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107041">石川隆男</A></TD><TD>2</TD><TD>四1,2<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普202)</a></TD><TD>48</TD><TD ALIGN="left" VALIGN="TOP">限學士班三年級以上,本校修課人數上限：48人</TD><TD ALIGN="left" VALIGN="TOP">外系生須日語能力檢定三級以上</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('24697')">加入</a></td></tr>
+<tr align="center"><TD>80944</TD><TD>日文系</TD><TD>JpnL2002</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20102&class=01&dpt_code=1070&ser_no=80944&semester=105-2&lang=CH">中級日語下</A></TD><TD>3</TD><TD>107 20102</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107012">林慧君</A></TD><TD>2</TD><TD>四3,4,5<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共307)</a></TD><TD>40</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20102&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生) 且 限學號單號,本校修課人數上限：40人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意.本課程不開放旁聽.</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL2002_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('80944')">加入</a></td></tr>
+<tr align="center"><TD>10423</TD><TD>日文系</TD><TD>JpnL2002</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20102&class=02&dpt_code=1070&ser_no=10423&semester=105-2&lang=CH">中級日語下</A></TD><TD>3</TD><TD>107 20102</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107049">黃鈺涵</A></TD><TD>2</TD><TD>四5,6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普302)</a></TD><TD>40</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20102&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生) 且 限學號雙號,本校修課人數上限：40人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意.本課程不開放旁聽.</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL2002_02"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('10423')">加入</a></td></tr>
+<tr align="center"><TD>62630</TD><TD>日文系</TD><TD>JpnL2004</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20222&class=01&dpt_code=1070&ser_no=62630&semester=105-2&lang=CH">日語會話二下</A></TD><TD>3</TD><TD>107 20222</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107075">&#36795;明壽</A></TD><TD>2</TD><TD>二8,9,10<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共307)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20222&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL2004_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('62630')">加入</a></td></tr>
+<tr align="center"><TD>73917</TD><TD>日文系</TD><TD>JpnL2004</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20222&class=02&dpt_code=1070&ser_no=73917&semester=105-2&lang=CH">日語會話二下</A></TD><TD>3</TD><TD>107 20222</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107041">石川隆男</A></TD><TD>2</TD><TD>二1,2<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共202)</a>三6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共303)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20222&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。週三67節上課期間為第1週至第9週。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('73917')">加入</a></td></tr>
+<tr align="center"><TD>76338</TD><TD>日文系</TD><TD>JpnL2004</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20222&class=03&dpt_code=1070&ser_no=76338&semester=105-2&lang=CH">日語會話二下</A></TD><TD>3</TD><TD>107 20222</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107020">服部美貴</A></TD><TD>2</TD><TD>一5,6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共403)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20222&lang=CH">本課有先修科目規定</A>,限學號末二位被３整除 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('76338')">加入</a></td></tr>
+<tr align="center"><TD>20157</TD><TD>日文系</TD><TD>JpnL2006</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20302&class=&dpt_code=1070&ser_no=20157&semester=105-2&lang=CH">日語語法下</A></TD><TD>3</TD><TD>107 20302</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107018">黃鴻信</A></TD><TD>2</TD><TD>四8,9,10<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普202)</a></TD><TD>70</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20302&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生),本校修課人數上限：70人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('20157')">加入</a></td></tr>
+<tr align="center"><TD>63211</TD><TD>日文系</TD><TD>JpnL2010</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20422&class=01&dpt_code=1070&ser_no=63211&semester=105-2&lang=CH">日文習作二下</A></TD><TD>2</TD><TD>107 20422</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107041">石川隆男</A></TD><TD>2</TD><TD>二3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共401)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20422&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('63211')">加入</a></td></tr>
+<tr align="center"><TD>68040</TD><TD>日文系</TD><TD>JpnL2010</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20422&class=02&dpt_code=1070&ser_no=68040&semester=105-2&lang=CH">日文習作二下</A></TD><TD>2</TD><TD>107 20422</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107020">服部美貴</A></TD><TD>2</TD><TD>二6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普401)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20422&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('68040')">加入</a></td></tr>
+<tr align="center"><TD>43533</TD><TD>日文系</TD><TD>JpnL2010</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20422&class=03&dpt_code=1070&ser_no=43533&semester=105-2&lang=CH">日文習作二下</A></TD><TD>2</TD><TD>107 20422</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107075">&#36795;明壽</A></TD><TD>2</TD><TD>二6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共404)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20422&lang=CH">本課有先修科目規定</A>,限學號末二位被３整除 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL2010_03"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('43533')">加入</a></td></tr>
+<tr align="center"><TD>15052</TD><TD>日文系</TD><TD>JpnL2012</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20502&class=01&dpt_code=1070&ser_no=15052&semester=105-2&lang=CH">日文翻譯一下</A></TD><TD>2</TD><TD>107 20502</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107013">陳明姿</A></TD><TD>2</TD><TD>一3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2006   target=_new >(文19)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20502&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('15052')">加入</a></td></tr>
+<tr align="center"><TD>54500</TD><TD>日文系</TD><TD>JpnL2012</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20502&class=02&dpt_code=1070&ser_no=54500&semester=105-2&lang=CH">日文翻譯一下</A></TD><TD>2</TD><TD>107 20502</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107028">徐興慶</A></TD><TD>2</TD><TD>四1,2<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共311)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20502&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('54500')">加入</a></td></tr>
+<tr align="center"><TD>69731</TD><TD>日文系</TD><TD>JpnL2012</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20502&class=03&dpt_code=1070&ser_no=69731&semester=105-2&lang=CH">日文翻譯一下</A></TD><TD>2</TD><TD>107 20502</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107036">曹景惠</A></TD><TD>2</TD><TD>二3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共407)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 20502&lang=CH">本課有先修科目規定</A>,限學號末二位被３整除 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('69731')">加入</a></td></tr>
+<tr align="center"><TD>80150</TD><TD>日文系</TD><TD>JpnL2016</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20702&class=&dpt_code=1070&ser_no=80150&semester=105-2&lang=CH">日本童話選讀下</A></TD><TD>2</TD><TD>107 20702</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107030">林立萍</A></TD><TD>2</TD><TD>三3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普205)</a></TD><TD>30</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生) 且 限學士班二年級以上,本校修課人數上限：30人</TD><TD ALIGN="left" VALIGN="TOP">(授課對象以本系二年級同學為主)</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL2016_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('80150')">加入</a></td></tr>
+<tr align="center"><TD>72327</TD><TD>日文系</TD><TD>JpnL2019</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 20800&class=&dpt_code=1070&ser_no=72327&semester=105-2&lang=CH">日本文學與文化導讀</A></TD><TD>2</TD><TD>107 20800</TD><TD>半年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107010">范淑文</A></TD><TD>2</TD><TD>五6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普202)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">限學士班二年級以上,本校修課人數上限：50人</TD><TD ALIGN="left" VALIGN="TOP">與陳明姿、朱秋而、曹景惠、洪瑟君合開</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL2019_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('72327')">加入</a></td></tr>
+<tr align="center"><TD>19776</TD><TD>日文系</TD><TD>JpnL3002</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30102&class=&dpt_code=1070&ser_no=19776&semester=105-2&lang=CH">日本語言學概論下</A></TD><TD>2</TD><TD>107 30102</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107012">林慧君</A></TD><TD>2</TD><TD>三3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普303)</a></TD><TD>70</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 30102&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生),本校修課人數上限：70人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3002_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('19776')">加入</a></td></tr>
+<tr align="center"><TD>79547</TD><TD>日文系</TD><TD>JpnL3004</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30202&class=&dpt_code=1070&ser_no=79547&semester=105-2&lang=CH">日本文學史下</A></TD><TD>3</TD><TD>107 30202</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107013">陳明姿</A></TD><TD>2</TD><TD>二2,3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普501)</a></TD><TD>70</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 30202&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生),本校修課人數上限：70人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('79547')">加入</a></td></tr>
+<tr align="center"><TD>80596</TD><TD>日文系</TD><TD>JpnL3008</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30302&class=&dpt_code=1070&ser_no=80596&semester=105-2&lang=CH">日本文學名著選讀下</A></TD><TD>2</TD><TD>107 30302</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107069">洪瑟君</A></TD><TD>2</TD><TD>五3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普201)</a></TD><TD>70</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生),本校修課人數上限：70人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3008_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('80596')">加入</a></td></tr>
+<tr align="center"><TD>46849</TD><TD>日文系</TD><TD>JpnL3010</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30422&class=01&dpt_code=1070&ser_no=46849&semester=105-2&lang=CH">日文翻譯二下</A></TD><TD>2</TD><TD>107 30422</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107020">服部美貴</A></TD><TD>2</TD><TD>三8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共202)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 30422&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘１ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3010_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('46849')">加入</a></td></tr>
+<tr align="center"><TD>37913</TD><TD>日文系</TD><TD>JpnL3010</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30422&class=02&dpt_code=1070&ser_no=37913&semester=105-2&lang=CH">日文翻譯二下</A></TD><TD>2</TD><TD>107 30422</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107075">&#36795;明壽</A></TD><TD>2</TD><TD>五8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共306)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 30422&lang=CH">本課有先修科目規定</A>,限學號末二位除３餘２ 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3010_02"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('37913')">加入</a></td></tr>
+<tr align="center"><TD>47491</TD><TD>日文系</TD><TD>JpnL3010</TD><TD>03</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30422&class=03&dpt_code=1070&ser_no=47491&semester=105-2&lang=CH">日文翻譯二下</A></TD><TD>2</TD><TD>107 30422</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107041">石川隆男</A></TD><TD>2</TD><TD>三8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共301)</a></TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 30422&lang=CH">本課有先修科目規定</A>,限學號末二位被３整除 且 限本系所學生(含輔系、雙修生),本校修課人數上限：25人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('47491')">加入</a></td></tr>
+<tr align="center"><TD>43979</TD><TD>日文系</TD><TD>JpnL3012</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30502&class=01&dpt_code=1070&ser_no=43979&semester=105-2&lang=CH">高級日語下</A></TD><TD>2</TD><TD>107 30502</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107074">&#36795;本雅史</A></TD><TD>2</TD><TD>四3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2006   target=_new >(文20)</a></TD><TD>35</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 30502&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生) 且 限學號單號,本校修課人數上限：35人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3012_01"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('43979')">加入</a></td></tr>
+<tr align="center"><TD>77478</TD><TD>日文系</TD><TD>JpnL3012</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30502&class=02&dpt_code=1070&ser_no=77478&semester=105-2&lang=CH">高級日語下</A></TD><TD>2</TD><TD>107 30502</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107027">朱秋而</A></TD><TD>2</TD><TD>四3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共401)</a></TD><TD>35</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 30502&lang=CH">本課有先修科目規定</A>,限學號雙號 且 限本系所學生(含輔系、雙修生),本校修課人數上限：35人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('77478')">加入</a></td></tr>
+<tr align="center"><TD>39212</TD><TD>日文系</TD><TD>JpnL3053</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30532&class=&dpt_code=1070&ser_no=39212&semester=105-2&lang=CH">日文習作三下</A></TD><TD>2</TD><TD>107 30532</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107075">&#36795;明壽</A></TD><TD>2</TD><TD>三6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT2038   target=_new >(共402)</a></TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生),本校修課人數上限：20人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3053_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('39212')">加入</a></td></tr>
+<tr align="center"><TD>77321</TD><TD>日文系</TD><TD>JpnL3016</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 30602&class=&dpt_code=1070&ser_no=77321&semester=105-2&lang=CH">日本歷史下</A></TD><TD>2</TD><TD>107 30602</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107074">&#36795;本雅史</A></TD><TD>2</TD><TD>四8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普302)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">本校修課人數上限：50人</TD><TD ALIGN="left" VALIGN="TOP">日語授課。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3016_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('77321')">加入</a></td></tr>
+<tr align="center"><TD>46662</TD><TD>日文系</TD><TD>JpnL3060</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 31902&class=&dpt_code=1070&ser_no=46662&semester=105-2&lang=CH">日本政治與外交下</A></TD><TD>2</TD><TD>107 31902</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107032">何思慎</A></TD><TD>2</TD><TD>一8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1020   target=_new >(新503)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生),本校修課人數上限：50人,外系人數限制：10人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('46662')">加入</a></td></tr>
+<tr align="center"><TD>84329</TD><TD>日文系</TD><TD>JpnL3051</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 32302&class=&dpt_code=1070&ser_no=84329&semester=105-2&lang=CH">日本戲劇導讀下</A></TD><TD>2</TD><TD>107 32302</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107020">服部美貴</A></TD><TD>2</TD><TD>二8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普406)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生) 且 限學士班三年級以上,本校修課人數上限：50人</TD><TD ALIGN="left" VALIGN="TOP">選修「日本戲劇導讀」課程者請務必同時於大三下學期選修日文系「服務學習三」。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('84329')">加入</a></td></tr>
+<tr align="center"><TD>25798</TD><TD>日文系</TD><TD>JpnL3058</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 32402&class=&dpt_code=1070&ser_no=25798&semester=105-2&lang=CH">日本思想名著選讀下</A></TD><TD>2</TD><TD>107 32402</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107074">&#36795;本雅史</A></TD><TD>2</TD><TD>三1,2<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普201)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">本校修課人數上限：50人</TD><TD ALIGN="left" VALIGN="TOP">日語授課。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL3058_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('25798')">加入</a></td></tr>
+<tr align="center"><TD>84775</TD><TD>日文系</TD><TD>JpnL3064</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 32822&class=&dpt_code=1070&ser_no=84775&semester=105-2&lang=CH">日語語法諸問題下</A></TD><TD>2</TD><TD>107 32822</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107018">黃鴻信</A></TD><TD>2</TD><TD>四6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普201)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生),本校修課人數上限：50人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('84775')">加入</a></td></tr>
+<tr align="center"><TD>74073</TD><TD>日文系</TD><TD>JpnL3065</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 32900&class=&dpt_code=1070&ser_no=74073&semester=105-2&lang=CH">日本隨筆文學導讀</A></TD><TD>2</TD><TD>107 32900</TD><TD>半年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107036">曹景惠</A></TD><TD>2</TD><TD>一6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1044   target=_new >(博雅307)</a></TD><TD>40(含開放台大聯盟人數:2)</TD><TD ALIGN="left" VALIGN="TOP">本校修課人數上限：38人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('74073')">加入</a></td></tr>
+<tr align="center"><TD>38947</TD><TD>日文系</TD><TD>JpnL4004</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 40112&class=&dpt_code=1070&ser_no=38947&semester=105-2&lang=CH">日本近現代文學選讀下</A></TD><TD>2</TD><TD>107 40112</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107010">范淑文</A></TD><TD>2</TD><TD>一3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普401)</a></TD><TD>60</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 40112&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生),本校修課人數上限：60人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('38947')">加入</a></td></tr>
+<tr align="center"><TD>49765</TD><TD>日文系</TD><TD>JpnL4011</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 40402&class=&dpt_code=1070&ser_no=49765&semester=105-2&lang=CH">新聞日語下</A></TD><TD>2</TD><TD>107 40402</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107041">石川隆男</A></TD><TD>2</TD><TD>二6,7<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普301)</a></TD><TD>45</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生),本校修課人數上限：45人</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052JpnL4011_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="瀏覽課程網站" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('49765')">加入</a></td></tr>
+<tr align="center"><TD>49616</TD><TD>日文系</TD><TD>JpnL4013</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 40502&class=&dpt_code=1070&ser_no=49616&semester=105-2&lang=CH">日語口譯下</A></TD><TD>2</TD><TD>107 40502</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107010">范淑文</A></TD><TD>2</TD><TD>二3,4<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1032   target=_new >(外教305)</a></TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">限學士班四年級以上 且 限本系所學生(含輔系、雙修生),本校修課人數上限：20人</TD><TD ALIGN="left" VALIGN="TOP">輔系雙修生須經授課教師同意。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('49616')">加入</a></td></tr>
+<tr align="center"><TD>87030</TD><TD>日文系</TD><TD>JpnL4021</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 41002&class=&dpt_code=1070&ser_no=87030&semester=105-2&lang=CH">日本古典文學選讀下</A></TD><TD>2</TD><TD>107 41002</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107027">朱秋而</A></TD><TD>2</TD><TD>三8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普505)</a></TD><TD>65</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 41002&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生),本校修課人數上限：65人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('87030')">加入</a></td></tr>
+<tr align="center"><TD>82673</TD><TD>日文系</TD><TD>JpnL4032</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 41402&class=&dpt_code=1070&ser_no=82673&semester=105-2&lang=CH">日本文化史下</A></TD><TD>2</TD><TD>107 41402</TD><TD>全年</TD><TD>必帶</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107028">徐興慶</A></TD><TD>2</TD><TD>二8,9<a href=http://map.ntu.edu.tw/ntu.html?layer=&uid=AT1009   target=_new >(普306)</a></TD><TD>75</TD><TD ALIGN="left" VALIGN="TOP"><A TARGET="_new" HREF="print_pre_course.php?course_id=107 41402&lang=CH">本課有先修科目規定</A>,限本系所學生(含輔系、雙修生),本校修課人數上限：75人</TD><TD ALIGN="left" VALIGN="TOP">雙修生須經授課教師同意。不開放輔系學生修習</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('82673')">加入</a></td></tr>
+<tr align="center"><TD>86697</TD><TD>日文系</TD><TD>JpnL4035</TD><TD>01</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=107 41502&class=01&dpt_code=1070&ser_no=86697&semester=105-2&lang=CH">專題討論下</A></TD><TD>1</TD><TD>107 41502</TD><TD>全年</TD><TD>選修</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=107013">陳明姿</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>4</TD><TD ALIGN="left" VALIGN="TOP">限本系所學生(含輔系、雙修生) 且 限學士班三年級以上,本校修課人數上限：4人</TD><TD ALIGN="left" VALIGN="TOP">初選不開放。限申請通過者選修。申請辦法詳見課程大綱。本課程為全學年課程，上、下均修習通過，方計入畢業學分。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('86697')">加入</a></td></tr>
+</table>
+
+
+<table width="100%" border="0" cellpadding="4">
+<tr>
+    <td align='left'> <font color="#CC0033">開學後之加選方式:1-不限人數，直接上網加選  2-向教師取得授權碼後加選  3-有人數限制，上網登記後分發<br>「選課限制條件」欄位中有關身分之限制，僅適用於初選階段，不適用於開學後之加退選階段。但下列二種情況仍須限制：<br>1.較高學制課程未開放較低學制學生修習者（僅第一、三類加選方式課程適用）。<br>2.在職專班課程限在職專班學生修習（各類加選方式皆適用）。 </td>
+</tr>
+    <tr>
+        <td align='left'>共查詢到<font color="#CC0033"> <b>57</b> </font>筆課程</td>
+        <td align='right'>
+&lt;&lt;上一頁　　下一頁&gt;&gt;　<select name="jump" onChange="location.href=this.options[this.selectedIndex].value;">
+<option value='?alltime=yes&allproced=yes&selcode=-1&dptname=1070&coursename=&teachername=&current_sem=105-2&yearcode=0&op=&startrec=0&week1=&week2=&week3=&week4=&week5=&week6=&proced0=&proced1=&proced2=&proced3=&proced4=&procedE=&proced5=&proced6=&proced7=&proced8=&proced9=&procedA=&procedB=&procedC=&procedD=&allsel=yes&selCode1=&selCode2=&selCode3=&page_cnt=9999' selected>第1頁</option></select>  
+        </td>
+    </tr>
+</table>
+
+</BODY>
+</HTML>

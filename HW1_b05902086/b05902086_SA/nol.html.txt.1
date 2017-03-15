@@ -1,0 +1,934 @@
+ <SCRIPT LANGUAGE="JavaScript">
+   function show(message1)
+       {
+          new1=window.open("","教室資訊","location,status,resizable=yes,width=600,height=100");
+          new1.document.write (message1);
+       }
+   function show_close()
+       {
+           new1.close();
+       }
+ </SCRIPT>
+<HTML>
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+<link rel=stylesheet type="text/css" href="font.css">
+<title>Courses for Department/Graduate Institute</title>
+</HEAD>
+
+<BODY LEFTMARGIN="4" MARGINWIDTH="0" TOPMARGIN="0" MARGINHEIGHT="0" bgcolor="#FFFFFF" vlink="#666666">
+<table width="100%" border="0" cellspacing="3" cellpadding="0">
+  <tr> 
+    <td><font color="#333366"><a name="top"></a>Where you are at now：</font><a href="index.php">Online Course Information</a> 
+            &gt; Courses by Dept/Grad. Institute</td>
+    <td> 
+ <div align="right"><font color="#CC3300"><b></b></font> <font color="#333366">
+</font></div>  
+
+    </td>
+  </tr>
+</table>
+ 
+<table width="100%" border="0">
+        <tr> 
+          <td valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="4" bordercolor="#FFFFFF">
+              <tr>
+                <a target="_new" href=http://www.aca.ntu.edu.tw/aca2012/reg/SELCOU/105-2CREDIT_EN.DOC> <font size=2  color=red>Credit Requirements Sheet</a>              </tr>
+              <tr> 
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_result.php">Fast Search</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_01_major.php">General Courses</a></td>
+                <td align="center" width="7%" bgcolor="#FEEA9A"><b>Courses by Dept/ Grad. Institute</b></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_03_co.php">Liberal Education Courses/Freshman Seminars/Freshman Forum/Basic Competence</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_10_class.php">Courses with Multiple Sessions</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_05_ec.php">Academic Programs</a></td>
+                <td align="center" width="12%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_07_uw.php">Online English Program (Online English Learning Program for Graduate Students)</a></td>
+                  <td align="center"  width="7%"bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#DBDBEC' onMouseOut=this.style.backgroundColor=''><a href="search_for_14_write.php">Academic Writing Courses</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_09_gym.php">Physical Education/Military Training </a></td>
+<!--                <td align="center" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_06_nd.php">Degree BA Programs by the School of Professional and Continuing Studies </a></td>   -->
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_04_dt.php">E-learning Courses </a></td>
+                 <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_16_tri.php">NTU system Courses</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_11_asy.php">On-demand E-learning </a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_13_eng.php">Courses conducted in English</a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_12_cha.php">Course Changes </a></td>
+                <td align="center" width="7%" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''><a href="search_for_08_other.php">Others</a></td>
+               <!--  <td align="center" bgcolor="#F0F0F7" onMouseOver=this.style.backgroundColor='#E3E3E3' onMouseOut=this.style.backgroundColor=''>
+                 <a href="http://couweb3.aca.ntu.edu.tw/course/20.htm" target="_blank">Courses</a></td>-->
+              </tr>
+            </table>
+
+<!--本體-->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function ChangeSelectA(form)
+{
+    var objSelect=form.dpt_sel;
+    selvar=objSelect.options[objSelect.selectedIndex].value;
+    for(i=0;i<form.dptname.length;i++)
+    {
+        if(form.dptname.options[i].value == selvar)
+        {
+            form.dptname.selectedIndex=i;
+            break;
+        }
+    }
+}
+function ChangeSelectB(form)
+{
+    var objSelect=form.dptname;
+    selvar=objSelect.options[objSelect.selectedIndex].value;
+    for(i=0;i<form.dpt_sel.length;i++)
+    {
+        if(form.dpt_sel.options[i].value.charAt(0) == selvar.charAt(0))
+        {
+            form.dpt_sel.selectedIndex=i;
+            break;
+        }
+    }
+    sem_onchange();
+}
+function changeyear(form)
+{
+    var objSelect=form.yearcode;
+    var objdpt=form.dptname;
+    selvar=objdpt.options[objdpt.selectedIndex].value;
+    sem_onchange();
+}
+function daycheck() {
+    var obj_time = document.getElementsByName("alltime");
+    var check1 = document.getElementById("week1");
+    var check2 = document.getElementById("week2");
+    var check3 = document.getElementById("week3");
+    var check4 = document.getElementById("week4");
+    var check5 = document.getElementById("week5");
+    var check6 = document.getElementById("week6");
+    if(check1.checked||check2.checked||check3.checked||check4.checked||check5.checked||check6.checked){
+        obj_time[0].checked = false;
+        obj_time[1].checked = true;
+    }
+}
+//加選方式
+function selcheck() {
+    var obj_sel = document.getElementsByName("allsel");
+    var check1 = document.getElementById("selCode1");
+    var check2 = document.getElementById("selCode2");
+    var check3 = document.getElementById("selCode3");
+  
+    if(check1.checked||check2.checked||check3.checked){
+        obj_sel[0].checked = false;
+        obj_sel[1].checked = true;
+    }
+}
+function procedcheck() {
+    var obj_proced = document.getElementsByName("allproced");
+    var check0 = document.getElementById("proced0");
+    var check1 = document.getElementById("proced1");
+    var check2 = document.getElementById("proced2");
+    var check3 = document.getElementById("proced3");
+    var check4 = document.getElementById("proced4");
+    var checkE = document.getElementById("procedE");
+    var check5 = document.getElementById("proced5");
+    var check6 = document.getElementById("proced6");
+    var check7 = document.getElementById("proced7");
+    var check8 = document.getElementById("proced8");
+    var check9 = document.getElementById("proced9");
+    var checkA = document.getElementById("procedA");
+    var checkB = document.getElementById("procedB");
+    var checkC = document.getElementById("procedC");
+    var checkD = document.getElementById("procedD");
+
+    if(check0.checked||check1.checked||check2.checked||check3.checked||check4.checked||checkE.checked ||check5.checked||check6.checked||check7.checked||check8.checked||check9.checked||checkA.checked ||checkB.checked||checkC.checked||checkD.checked){
+        obj_proced[0].checked = false;
+        obj_proced[1].checked = true;
+    }
+}
+
+function timeradio() {
+    var obj_time = document.getElementsByName("alltime");
+    var check1 = document.getElementById("week1");
+    var check2 = document.getElementById("week2");
+    var check3 = document.getElementById("week3");
+    var check4 = document.getElementById("week4");
+    var check5 = document.getElementById("week5");
+    var check6 = document.getElementById("week6");
+    if(obj_time[0].checked){//不限時間
+        check1.checked = check2.checked = check3.checked = check4.checked = check5.checked = check6.checked = false;
+    }
+}
+//加選方式
+function selectradio() {
+    var obj_sel = document.getElementsByName("allsel");
+    var check1 = document.getElementById("selCode1");
+    var check2 = document.getElementById("selCode2");
+    var check3 = document.getElementById("selCode3");
+  
+    if(obj_sel[0].checked){//不限
+        check1.checked = check2.checked = check3.checked  = false;
+    }
+}
+function procedradio() {
+    var obj_proced = document.getElementsByName("allproced");
+    var check0 = document.getElementById("proced0");
+    var check1 = document.getElementById("proced1");
+    var check2 = document.getElementById("proced2");
+    var check3 = document.getElementById("proced3");
+    var check4 = document.getElementById("proced4");
+    var checkE = document.getElementById("procedE");
+    var check5 = document.getElementById("proced5");
+    var check6 = document.getElementById("proced6");
+    var check7 = document.getElementById("proced7");
+    var check8 = document.getElementById("proced8");
+    var check9 = document.getElementById("proced9");
+    var checkA = document.getElementById("procedA");
+    var checkB = document.getElementById("procedB");
+    var checkC = document.getElementById("procedC");
+    var checkD = document.getElementById("procedD");
+
+    if(obj_proced[0].checked){//不限時間
+        check0.checked = check1.checked = check2.checked = check3.checked = check4.checked = checkE.checked =check5.checked = check6.checked = check7.checked = check8.checked = check9.checked = checkA.checked = checkB.checked = checkC.checked = checkD.checked =  false;
+    }
+}
+function sem_onchange() {
+    var objsel = document.getElementById("select_sem");
+    var obj_dpt = document.getElementById("dptname");
+    var obj_top = document.getElementById("dpt_sel");   
+	var obj_page=document.getElementById("page_cnt");
+    var obj_coursename = document.getElementById("coursename");
+    var obj_teacher = document.getElementById("teachername");
+    var obj_year = document.getElementById("yearcode");
+    var obj_selcode = document.getElementsByName("selcode");
+    var selcode;
+    for (var i=0; i< obj_selcode.length;i++){
+        if (obj_selcode[i].checked) {
+            selcode = obj_selcode[i].value;
+            break;
+        }
+    }   
+    var obj_time = document.getElementsByName("alltime");
+    var alltime;
+    for (var i=0; i< obj_time.length;i++){
+        if (obj_time[i].checked) {
+            alltime = obj_time[i].value;
+            break;
+        }
+    }           
+    var week1=week2=week3=week4=week5=week6="";
+    if(document.getElementById("week1").checked)
+        week1 = document.getElementById("week1").value;
+    if(document.getElementById("week2").checked)
+        week2 = document.getElementById("week2").value;
+    if(document.getElementById("week3").checked)
+        week3 = document.getElementById("week3").value;
+    if(document.getElementById("week4").checked)
+        week4 = document.getElementById("week4").value;
+    if(document.getElementById("week5").checked)
+        week5 = document.getElementById("week5").value;
+    if(document.getElementById("week6").checked)
+        week6 = document.getElementById("week6").value;
+
+     var obj_proced = document.getElementsByName("allproced");
+    var allproced;
+    for (var i=0; i< obj_proced.length;i++){
+        if (obj_proced[i].checked) {
+            allproced = obj_proced[i].value;
+            break;
+        }
+    }           
+    var proced0=proced1=proced2=proced3=proced4=procedE=proced5=proced6=proced7=proced8=proced9=procedA=procedB=procedC=procedD="";
+     if(document.getElementById("proced0").checked)
+        proced0 = document.getElementById("proced0").value;
+     if(document.getElementById("proced1").checked)
+        proced1 = document.getElementById("proced1").value;
+     if(document.getElementById("proced2").checked)
+        proced2 = document.getElementById("proced2").value;
+     if(document.getElementById("proced3").checked)
+        proced3 = document.getElementById("proced3").value;
+     if(document.getElementById("proced4").checked)
+        proced4 = document.getElementById("proced4").value;
+     if(document.getElementById("procedE").checked)
+        procedE = document.getElementById("procedE").value;
+     if(document.getElementById("proced5").checked)
+        proced5 = document.getElementById("proced5").value;
+     if(document.getElementById("proced6").checked)
+        proced6 = document.getElementById("proced6").value;
+     if(document.getElementById("proced7").checked)
+        proced7 = document.getElementById("proced7").value;
+     if(document.getElementById("proced8").checked)
+        proced8 = document.getElementById("proced8").value;
+     if(document.getElementById("proced9").checked)
+        proced9 = document.getElementById("proced9").value;
+     if(document.getElementById("procedA").checked)
+        procedA = document.getElementById("procedA").value;
+     if(document.getElementById("procedB").checked)
+        procedB = document.getElementById("procedB").value;
+     if(document.getElementById("procedC").checked)
+        procedC = document.getElementById("procedC").value;
+     if(document.getElementById("procedD").checked)
+        procedD = document.getElementById("procedD").value;
+    
+	var obj_sel = document.getElementsByName("allsel");
+    var allsel;
+    for (var i=0; i< obj_sel.length;i++){
+        if (obj_sel[i].checked) {
+            allsel = obj_sel[i].value;
+            break;
+        }
+    }           
+    var selCode1=selCode2=selCode3="";
+    if(document.getElementById("selCode1").checked)
+        selCode1 = document.getElementById("selCode1").value;
+    if(document.getElementById("selCode2").checked)
+        selCode2 = document.getElementById("selCode2").value;
+    if(document.getElementById("selCode3").checked)
+        selCode3 = document.getElementById("selCode3").value;
+
+    var url="search_for_02_dpt.php?current_sem="+objsel.options[objsel.selectedIndex].value+"&coursename="+obj_coursename.value+"&dptname="+obj_dpt.options[obj_dpt.selectedIndex].value+"&dpt_sel="+obj_top.options[obj_top.selectedIndex].value+"&yearcode="+obj_year.options[obj_year.selectedIndex].value+"&teachername="+obj_teacher.value+"&selcode="+selcode+"&alltime="+alltime+"&week1="+week1+"&week2="+week2+"&week3="+week3+"&week4="+week4+"&week5="+week5+"&week6="+week6+"&allproced="+allproced+"&proced0="+proced0+"&proced1="+proced1+"&proced2="+proced2+"&proced3="+proced3+"&proced4="+proced4+"&procedE="+procedE+"&proced5="+proced5+"&proced6="+proced6+"&proced7="+proced7+"&proced8="+proced8+"&proced9="+proced9+"&procedA="+procedA+"&procedB="+procedB+"&procedC="+procedC+"&procedD="+procedD+"&allsel="+allsel+"&selCode1="+selCode1+"&selCode2="+selCode2+"&selCode3="+selCode3+"&page_cnt="+obj_page.value;
+    window.location = url;
+}
+//-->
+</SCRIPT>
+
+<table width="100%" border="1" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" cellpadding="6" bgcolor="#FEEA9A">
+              <tr> 
+                <form name="form1" method="post" action="search_for_02_dpt.php">
+                    <input type="hidden" name="current_sem" value="105-2">                    
+
+                  <td> 
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                            <tr>
+                              <td colspan="3"><b><font color="#CC6633">Courses for Department/Graduate Institute</font></b></td>
+                            </tr>
+                            <tr> 
+                              <td width="120" align="right">College：                                </td>
+                                <td width="480" align="left"><select id= "dpt_sel" name="dpt_sel" onChange = "ChangeSelectA(this.form)">
+                                  <option value="0">All</option>
+                                  <option value="1000">1000 COLLEGE OF LIBERAL ARTS                                                     </option>
+<option value="2000">2000 COLLEGE OF SCIENCE                                                          </option>
+<option value="3000">3000 COLLEGE OF SOCIAL SCIENCES                                                  </option>
+<option value="4000">4000 COLLEGE OF MEDICINE                                                         </option>
+<option value="5000">5000 COLLEGE OF ENGINEERING                                                      </option>
+<option value="6000">6000 College of Bioresources and Agriculture                                     </option>
+<option value="7000">7000 COLLEGE OF MANAGEMENT                                                       </option>
+<option value="8000">8000 COLLEGE OF PUBLIC HEALTH                                                    </option>
+<option value="9000" selected>9000 COLLEGE OF ELECTRICAL ENGINEERING AND COMPUTER SCIENCE                      </option>
+<option value="A000">A000 COLLEGE OF LAW                                                              </option>
+<option value="B000">B000 COLLEGE OF LIFESCIENCE                                                      </option>
+<option value="H000">H000 COMMON GENERAL EDUCATION CENTER                                             </option>
+<option value="J000">J000 INDUSTRIAL PROGRAM                                                          </option>
+<option value="K000">K000 三校聯盟                                                                        </option>
+                                </select></td>
+                                <td align="left">&nbsp;</td>
+                            </tr>
+                                <tr>
+                                <td width="120" align="right">
+                                Department：                                 </td>
+                                <td width="480"><select id="dptname" name="dptname" onChange = "ChangeSelectB(this.form)">
+                                  <option value="0">All</option>
+                                  <option value="0020">0020 THE ATHELETIC DEPARTMENT OF NTU                                             </option>
+<option value="0030">0030 MILITARY TRAINING COURSE FOR WOMEN                                          </option>
+<option value="0040">0040 Foreign Language Teaching & Resource Center                                 </option>
+<option value="1000">1000 COLLEGE OF LIBERAL ARTS                                                     </option>
+<option value="1010">1010 DEPARTMENT OF CHINESE AND LITERATURE                                        </option>
+<option value="1011">1011 Bachelor’s Degree Program in Chinese Literature for International Students  </option>
+<option value="1020">1020 DEPARTMENT OF FOREIGN LANGUAGES AND LITERATURE                              </option>
+<option value="1030">1030 DEPARTMENT OF HISTORY                                                       </option>
+<option value="1040">1040 DEPARTMENT OF PHILOSOPHY                                                    </option>
+<option value="1050">1050 DEPARTMENT OF ANTHROPOLOGY                                                  </option>
+<option value="1060">1060 DEPARTMENT OF LIBRARY AND INFORMATION SCIENCE                               </option>
+<option value="1070">1070 DEPARTMENT OF JAPANESE LANGUAGE AND LITERATURE                              </option>
+<option value="1080">1080 DEPARTMENT OF APPLIED ENGLISH                                               </option>
+<option value="1090">1090 DEPARTMENT OF DRAMA AND THEATRE                                             </option>
+<option value="1210">1210 GRADUATE INSTITUTE OF CHINESE AND LITERATURE                                </option>
+<option value="1220">1220 GRADUATE INSTITUTE OF FOREIGN LANGUAGES AND LITERATURE                      </option>
+<option value="1230">1230 GRADUATE INSTITUTE OF HISTORY                                               </option>
+<option value="1240">1240 GRADUATE INSTITUTE OF PHILOSOPHY                                            </option>
+<option value="1250">1250 GRADUATE INSTITUTE OF ANTHROPOLOGY                                          </option>
+<option value="1260">1260 GRADUATE INSTITUTE OF LIBRARY AND INFORMATION SCIENCE                       </option>
+<option value="1270">1270 INSTITUTE OF JAPANESE LANGUAGE AND LITERATURE                               </option>
+<option value="1290">1290 GRADUATE INSTITUTE OF DRAMA AND THEATRE                                     </option>
+<option value="1410">1410 GRADUATE INSTITUTE OF ART HISTORY                                           </option>
+<option value="1420">1420 GRADUATE INSTITUTE OF LINGUISTICS                                           </option>
+<option value="1440">1440 GRADUATE INSTITUTE OF MUSICOLOGY                                            </option>
+<option value="1450">1450 THE GRADUATE INSTITUDE OF TAIWAN LITERATURE                                 </option>
+<option value="1460">1460 Graduate Program of Teaching Chinese as a Second Language                   </option>
+<option value="1470">1470 Graduate Program in Translation and Interpretation                          </option>
+<option value="2000">2000 COLLEGE OF SCIENCE                                                          </option>
+<option value="2010">2010 DEPARTMENT OF MATHEMATICS                                                   </option>
+<option value="2020">2020 DEPARTMENT OF PHYSICS                                                       </option>
+<option value="2030">2030 DEPARTMENT OF CHEMISTRY                                                     </option>
+<option value="2040">2040 DEPARTMENT OF GEOSCIENCES                                                   </option>
+<option value="2050">2050 DEPARTMENT OF ZOOLOGY                                                       </option>
+<option value="2051">2051 DEPARTMENT OF ZOOLOGY,ZOOLOGY DIVISION                                      </option>
+<option value="2052">2052 DEPARTMENT OF ZOOLOGY, FISHERY DIVISION                                     </option>
+<option value="2060">2060 DEPARTMENT OF BOTANY                                                        </option>
+<option value="2070">2070 DEPARTMENT OF PSYCHOLOGY                                                    </option>
+<option value="2080">2080 DEPARTMENT OF GEOGRAPHY                                                     </option>
+<option value="2090">2090 DEPARTMENT OF ATMOSPHERIC SCIENCES                                          </option>
+<option value="2210">2210 GRADUATE INSTITUTE OF MATHEMATICS                                           </option>
+<option value="2220">2220 GRADUATE INSTITUTE OF PHYSICS                                               </option>
+<option value="2230">2230 GRADUATE INSTITUTE OF CHEMISTRY                                             </option>
+<option value="2231">2231 DIVISION OF CHEMISTRY                                                       </option>
+<option value="2232">2232 DIVISION OF CHEMICAL BIOLOGY                                                </option>
+<option value="2240">2240 GRADUATE INSTITUTE OF GEOSCIENCES                                           </option>
+<option value="2241">2241 GRADUATE INSTITUTE OF GEOSCIENCES, GEOLOGY DIVISION                         </option>
+<option value="2242">2242 GRADUATE INSTITUTE OF GEOSCIENCES, APPLIED GEOLOGY DIVISION                 </option>
+<option value="2250">2250 GRADUATE INSTITUTE OF ZOOLOGY                                               </option>
+<option value="2260">2260 GRADUATE INSTITUTE OF BOTANY                                                </option>
+<option value="2270">2270 GRADUATE INSTITUTE OF PSYCHOLOGY                                            </option>
+<option value="2271">2271 GENERAL PSYCHOLOGY PROGRAM                                                  </option>
+<option value="2272">2272 CLINICAL PSYCHOLOGY PROGRAM                                                 </option>
+<option value="2280">2280 GRADUATE INSTITUTE OF GEOGRAPHY                                             </option>
+<option value="2290">2290 GRADUATE INSTITUTE OF ATMOSPHERIC SCIENCES                                  </option>
+<option value="2410">2410 GRADUATE INSTITUTE OF OCEANOGRAPHY                                          </option>
+<option value="2411">2411 GRADUATE INSTITUTE OF OCEANOGRAPHY, PHYSICAL OCEANOGRAPHY DIVISION          </option>
+<option value="2412">2412 GRADUATE INSTITUTE OF OCEANOGRAPHY, MARINE BIOLOGY & FISHERIES DIVISION     </option>
+<option value="2413">2413 GRADUATE INSTITUTE OF OCEANOGRAPHY, MARINE GEOLOGY & GEOPHYSICS DIVISION    </option>
+<option value="2414">2414 GRADUATE INSTITUTE OF OCEANOGRAPHY, CHEMICAL OCEANOGRAPHY DIVISION          </option>
+<option value="2440">2440 INSTITUTE OF ARSTROPHYSICS                                                  </option>
+<option value="2450">2450 GRADUATE INSTITUTE OF APPLIED PHYSICS                                       </option>
+<option value="2460">2460 Institute of Applied Mathematical Sciences                                  </option>
+<option value="2470">2470 International Master/Doctoral Degree Program in Climate Change and Sustainab</option>
+<option value="3000">3000 COLLEGE OF SOCIAL SCIENCES                                                  </option>
+<option value="3020">3020 DEPARTMENT OF POLITICAL SCIENCE                                             </option>
+<option value="3021">3021 DEPARTMENT OF POLITICAL SCIENCE,POLITICAL THEORY DIVISION                   </option>
+<option value="3022">3022 DEPARTMENT OF POLITICAL SCIENCE, INTERNATIONAL RELATIONS DIVISION           </option>
+<option value="3023">3023 DEPARTMENT OF POLITICAL SCIENCE, PUBLIC ADMINISTRATION DIVISION             </option>
+<option value="3030">3030 DEPARTMENT OF ECONOMICS                                                     </option>
+<option value="3050">3050 DEPARTMENT OF SOCIOLOGY                                                     </option>
+<option value="3051">3051 DEPARTMENT OF SOCIOLOGY, SOCIOLOGY DIVISION                                 </option>
+<option value="3052">3052 DEPARTMENT OF SOCIOLOGY, SOCIAL WORK DIVISION                               </option>
+<option value="3100">3100 THE DEPARTMENT OF SOCIAL WORK                                               </option>
+<option value="3220">3220 GRADUATE INSTITUTE OF POLITICAL SCIENCE                                     </option>
+<option value="3230">3230 GRADUATE INSTITUTE OF ECONOMICS                                             </option>
+<option value="3250">3250 GRADUATE INSTITUTE OF SOCIOLOGY                                             </option>
+<option value="3300">3300 THE GRADUATE INSTITUTE  OF SOCIAL WORK                                      </option>
+<option value="3410">3410 GRADUATE INSTITUTE OF NATIONAL DEVELOPMENT                                  </option>
+<option value="3420">3420 GRADUATE INSTITUTE OF JOURNALISM                                            </option>
+<option value="3430">3430 Graduate Institute of Public Affairs                                        </option>
+<option value="4000">4000 COLLEGE OF MEDICINE                                                         </option>
+<option value="4010">4010 DEPARTMENT OF MEDICINE                                                      </option>
+<option value="4020">4020 DEPARTMENT OF DENTISTRY                                                     </option>
+<option value="4030">4030 DEPARTMENT OF PHARMACY                                                      </option>
+<option value="4031">4031 Department of Pharmacy(Six Years)                                           </option>
+<option value="4040">4040 DEPARTMENT OF MEDICAL TECHNOLOGY                                            </option>
+<option value="4060">4060 DEPARTMENT OF NURSING                                                       </option>
+<option value="4080">4080 DEPARTMENT OF PHYSICAL THERAPY                                              </option>
+<option value="4090">4090 DEPARTMENT OF OCCUPATIONAL THERAPY                                          </option>
+<option value="4200">4200 COMMON COURSES OF MEDICAL & PUBLIC HEALTH EDUCATION                         </option>
+<option value="4210">4210 GRADUATE INSTITUTE OF CLINICAL MEDICINE                                     </option>
+<option value="4220">4220 GRADUATE INSTITUTE OF CLINICAL DENTISTRY                                    </option>
+<option value="4230">4230 GRADUATE INSTITUTE OF PHARMACY                                              </option>
+<option value="4231">4231 Division of Pharmaceutical Technology , Department of Pharmacy              </option>
+<option value="4232">4232 Division of Molecular Pharmaceutics , Department of Pharmacy                </option>
+<option value="4240">4240 GRADUATE INSTITUTE OF MEDICAL TECHNOLOGY                                    </option>
+<option value="4260">4260 GRADUATE INSTITUTE OF NURSING                                               </option>
+<option value="4280">4280 GRADUATE INSTITUTE OF PHYSICAL THERAPY                                      </option>
+<option value="4290">4290 THE GRADUATE INSTITUTE OF OCCUPATIONAL                                      </option>
+<option value="4410">4410 GRADUATE INSTITUTE OF PHYSIOLOGY                                            </option>
+<option value="4420">4420 GRADUATE INSTITUTE OF DEPARTMENT(GRADUAT INSTITUTE) OF BIOCHEMISTRY AND MOLE</option>
+<option value="4430">4430 GRADUATE INSTITUTE OF PHARMACOLOGY                                          </option>
+<option value="4440">4440 GRADUATE INSTITUTE OF PATHOLOGY                                             </option>
+<option value="4450">4450 GRADUATE INSTITUTE OF MICROBIOLOGY                                          </option>
+<option value="4451">4451 GRADUATE INSTITUTE OF MICROBIOLOGY, MICROBIOLOGY & IMMUNOLOGY DIVISION      </option>
+<option value="4452">4452 GRADUATE INSTITUTE OF MICROBIOLOGY, PARASITOLOGY DIVISION                   </option>
+<option value="4460">4460 GRADUATE INSTITUTE OF ANATOMY AND CELL BIOLOGY                              </option>
+<option value="4470">4470 GRADUATE INSTITUTE OF TOXICOLOGY                                            </option>
+<option value="4480">4480 GRADUATE INSTITUTE OF MOLECULAR MEDICINE                                    </option>
+<option value="4490">4490 GRADUATE INSTITUTE OF IMMUNOLOGY                                            </option>
+<option value="4500">4500 GRADUATE INSTITUTE OF ORAL BIOLOGY                                          </option>
+<option value="4510">4510 GRADUATE INSTITUTE OF CLINICAL PHARMACY                                     </option>
+<option value="4520">4520 GRADUATE INSTITUTE OF FORENSIC MEDICINE                                     </option>
+<option value="4530">4530 GRADUATTE INSTITUTE OF ONCOLOGY                                             </option>
+<option value="4540">4540 Graduate Institute of Brain and Mind Sciences                               </option>
+<option value="4550">4550 Graduate Institute of Medical Genomics and Proteomics                       </option>
+<option value="4560">4560 Ph.D. of Translational Medicine Program                                     </option>
+<option value="4570">4570 Graduate Institute of Medical Education & Bioethics                         </option>
+<option value="4580">4580 Institute of Medical Devices and Imaging System                             </option>
+<option value="5000">5000 COLLEGE OF ENGINEERING                                                      </option>
+<option value="5010">5010 DEPARTMENT OF CIVIL ENGINEERING                                             </option>
+<option value="5020">5020 DEPARTMENT OF MECHANICAL ENGINEERING                                        </option>
+<option value="5040">5040 DEPARTMENT OF CHEMICAL ENGINEERING                                          </option>
+<option value="5050">5050 DEPARTMENT OF ENGINEERING SCIENCE OCEAN                                     </option>
+<option value="5070">5070 DEPARTMENT OF MATERIALS SCIENCE AND ENGINEERING                             </option>
+<option value="5210">5210 GRADUATE INSTITUTE OF CIVIL ENGINEERING                                     </option>
+<option value="5211">5211 GRADUATE INSTITUTE OF CIVIL ENGINEERING,GEOTECHNICAL ENGINEERING DIVISION   </option>
+<option value="5212">5212 GRADUATE INSTITUTE OF CIVIL ENGINEERING, STRUCTURAL ENGINEERING DIVISION    </option>
+<option value="5213">5213 GRADUATE INSTITUTE OF CIVIL ENGINEERING, HYDRAULIC ENGINEERING DIVISION     </option>
+<option value="5215">5215 GRADUATE INSTITUTE OF CIVIL ENGINEERING, TRANSPORATION ENGINEERING DIVISION </option>
+<option value="5216">5216 GRADUATE INSTITUTE OF CIVIL ENGINEERING,COMPUTER-AIDED ENGINEERING DIVISION </option>
+<option value="5217">5217 GRADUATE INSTITUTE OF CIVIL ENGINEERING,CONSTRUCTION ENGINEERING AND MANAGEM</option>
+<option value="5220">5220 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING                                </option>
+<option value="5221">5221 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING, FLUID MECHANICS DIVISION      </option>
+<option value="5223">5223 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING, THERMAL SCIENCE DIVISION      </option>
+<option value="5224">5224 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING, AERONAUTICAL DIVISI0N         </option>
+<option value="5225">5225 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING,SOLID MECNANICS DIVISION       </option>
+<option value="5226">5226 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING,MECHANICAL DESIGN DIVISION     </option>
+<option value="5227">5227 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING,MANUFACTURING DIVISION         </option>
+<option value="5228">5228 GRADUATE INSTITUTE OF MECHANICAL ENGINEERING,SYSTEM CONTROL DIVISION        </option>
+<option value="5240">5240 GRADUATE INSTITUTE OF CHEMICAL ENGINEERING                                  </option>
+<option value="5250">5250 GRADUATE INSTITUTE OF ENGINEERING SCIENCE                                   </option>
+<option value="5270">5270 GRADUATE INSTITUTE OF MATERIALS SCIENCE AND ENGINEERING                     </option>
+<option value="5410">5410 GRADUATE INSTITUTE OF ENVIRONMENTAL ENGINEERING                             </option>
+<option value="5430">5430 GRADUATE INSTITUTE OF APPLIED MECHANICS                                     </option>
+<option value="5440">5440 GRADUATE INSTITUTE OF BUILDING & PLANNING                                   </option>
+<option value="5460">5460 GRADUATE INSTITUTE OF INDUSTRIAL ENGINEERING                                </option>
+<option value="5480">5480 GRADUATE INSTITUTE OF BOMEDICAL ENGINEERING                                 </option>
+<option value="5490">5490 INSTITUTA OF POLYMEN SCIENCE AND ENGIN                                      </option>
+<option value="5500">5500 Ph.D.Program of Greem Materials and Precision Devices??                     </option>
+<option value="6000">6000 College of Bioresources and Agriculture                                     </option>
+<option value="6010">6010 DEPARTMENT OF AGRONOMY                                                      </option>
+<option value="6020">6020 DEPARTMENT OF BIOENVIRONMENTAL SYSTEMS ENGINEERING                          </option>
+<option value="6030">6030 DEPARTMENT OF DEPARTMENT OF AGRICULTURAL CHEMISTRY                          </option>
+<option value="6031">6031 DEPARTMENT OF AGRICULTURAL CHEMISTRY, SOILS & FERTILIZER DIVISION           </option>
+<option value="6032">6032 DEPARTMENT OF AGRICULTURAL CHEMISTRY, AGRICULTURAL PRODUCT PROCESSING DIVISI</option>
+<option value="6040">6040 DEPARTMENT OF PLANT PATHOLOGY & ENTOMOLOGY, PLANT PATHOLOGY DIVISION        </option>
+<option value="6050">6050 DEPARTMENT OF FORESTRY                                                      </option>
+<option value="6051">6051 DEPARTMENT OF FORESTRY, SILVICULTURE DIVISION                               </option>
+<option value="6052">6052 DEPARTMENT OF FORESTRY, FOREST MANAGEMENT DIVISION                          </option>
+<option value="6053">6053 DEPARTMENT OF FORESTRY, FOREST INDUSTRIES DIVISION                          </option>
+<option value="6054">6054 DEPARTMENT OF FORESTRY, FOREST RESOURCES CONSERVATION DIVISION              </option>
+<option value="6060">6060 DEPARTMENT OF ANIMAL SCIENCE AND TECHNOLOGY                                 </option>
+<option value="6070">6070 DEPARTMENT OF AGRICULTURAL ECONOMICS                                        </option>
+<option value="6080">6080 DEPARTMENT OF HORTICULTURE                                                  </option>
+<option value="6090">6090 SCHOOL OF VETERINARY MEDICINE                                               </option>
+<option value="6100">6100 DEPARTMENT OF BIO-INDUSTRY COMMUNICATIOIN DEVELOPMENT                       </option>
+<option value="6101">6101 DEPARTMENT OF AGRICULTURAL EXTENSION, EXTENSION EDUCATION DIVISION          </option>
+<option value="6102">6102 DEPARTMENT OF AGRICULTURAL EXTENSION,RURAL SOCIOLOGY DIVISION               </option>
+<option value="6110">6110 DEPARTMENT OF BIO-INDUSTRIAL MECHATRONICS ENGINEERING                       </option>
+<option value="6120">6120 DEPARTMENT OF ENTOMOLOGY                                                    </option>
+<option value="6130">6130 DEPARTMENT OF PLANT PATHOLOGY                                               </option>
+<option value="6210">6210 GRADUATE INSTITUTE OF AGRONOMY                                              </option>
+<option value="6211">6211 GRADUATE INSTITUTE OF AGRONOMY, CROP SCIENCE DIVISION                       </option>
+<option value="6212">6212 GRADUATE INSTITUTE OF AGRONOMY, BIOMETRY DIVISION                           </option>
+<option value="6220">6220 GRADUATE INSTITUTE OF BIOENVIROMENTAL SYSTEMS ENGINEERING                   </option>
+<option value="6230">6230 GRADUATE INSTITUTE OF AGRICULTURAL CHEMISTRY                                </option>
+<option value="6234">6234 GRADUATE INSTITUTE OF AGRICULTURAL CHEMISTRY, SOIL ENVIRONMENT SCIENCE & PLA</option>
+<option value="6235">6235 GRADUATE INSTITUTE OF AGRICULTURAL CHEMISTRY,BIOINDUSTRIAL CHEMISTRY DIVISIO</option>
+<option value="6236">6236 GRADUATE INSTITUTE OF AGRICULTURAL CHEMISTRY, BIOCHEMISTRY DIVISION         </option>
+<option value="6237">6237 GRADUATE INSTITUTE OF AGRICULTURAL CHEMISTRY ,NUTRITION  SCIENCE DIVISION   </option>
+<option value="6238">6238 GRADUATE INSTITUTE OF AGRICULTURAL CHEMISTRY,MICROBIOLOGY DIVISION          </option>
+<option value="6250">6250 SCHOOL OF FORESTRY AND RESOURCE CONSERVATION                                </option>
+<option value="6260">6260 DEPARTMENT OF ANIMAL SCIENCE AND TECHNOLOGY                                 </option>
+<option value="6270">6270 GRADUATE INSTITUTE OF AGRICULTURAL ECONOMICS                                </option>
+<option value="6280">6280 GRADUATE INSTITUTE OF HORTICULTURE                                          </option>
+<option value="6281">6281 GRADUATE INSTITUTE OF HORTICULTURE, HORTICULLTURAL CROP SCIENCE DIVISION    </option>
+<option value="6282">6282 GRADUATE INSTITUTE OF HORTICULTURE, POSTHARVEST HORTICULTURE &PRCESSING DIVI</option>
+<option value="6283">6283 GRADUATE INSTITUTE OF HORTICULTURE, LANDSCAPE HORTICULTURE DIVISION         </option>
+<option value="6290">6290 GRADUATE INSTITUTE OF VETERINARY MEDICINE                                   </option>
+<option value="6300">6300 DEPARTMENT OF BIO-INDUSTRY COMMUNICATIOIN DEVELOPMENT                       </option>
+<option value="6310">6310 GRADUATE INSTITUTE OF BIO-INDUSTRIAL MECHATRONICS ENGINEERING               </option>
+<option value="6320">6320 GRADUATE INSTITUTE OF ENTOMOLOGY                                            </option>
+<option value="6330">6330 GRADUATE INSTITUTE OF PLANT PATHOLOGY                                       </option>
+<option value="6410">6410 GRADUATE INSTITUTE OF FOOD SCIENCE & TECHNOLOGY                             </option>
+<option value="6420">6420 INSTITUTE OF BIOTECHNOLOGY                                                  </option>
+<option value="6430">6430 INSTITUTE OF VETERINARY CLINICAL SCIENCES                                   </option>
+<option value="6440">6440 Graduate Institute of Molecular and Comparative Pathobiology                </option>
+<option value="6450">6450 Master Program for Plant Medicine                                           </option>
+<option value="7000">7000 COLLEGE OF MANAGEMENT                                                       </option>
+<option value="7010">7010 DEPARTMENT OF BUSINESS ADMINISTRATION                                       </option>
+<option value="7011">7011 DEPARTMENT OF BUSINESS ADMINISTRATON-DIVISION OF BUSINESS MANAGEMENT        </option>
+<option value="7012">7012 DEPARTMENT OF BUSINESS ADMINISTRATION-DIVISION OF TECHNOLOGY MANAGEMENT     </option>
+<option value="7020">7020 DEPARTMENT OF ACCOUNTING                                                    </option>
+<option value="7030">7030 DEPARTMENT OF FINANCE                                                       </option>
+<option value="7040">7040 DEPARTMENT OF INTERNATIONAL BUSINESS                                        </option>
+<option value="7050">7050 DEPARTMENT OF INFORMATION MANAGEMENT                                        </option>
+<option value="7060">7060 DEPARTMENT OF BUSINESS ADMINISTRATION                                       </option>
+<option value="7220">7220 GRADUATE INSTITUTE OF ACCOUNTING                                            </option>
+<option value="7230">7230 GRADUATE INSTITUTE OF FINANCE                                               </option>
+<option value="7240">7240 GRADUATE INSTITUTE OF INTERNATIONAL BUSINESS                                </option>
+<option value="7250">7250 GRADUATE INSTITUTE OF INFORMATION MANAGEMENT                                </option>
+<option value="7400">7400 EXECUTIVE MASTER BUSINESS ADMINISTRATION                                    </option>
+<option value="7410">7410 GRADUATE INSTITUTE OF BUSINESS ADMINISTRATION                               </option>
+<option value="7420">7420 EMBA(WITH EMPHASIS ON KNOWLEDGE MANAGE)                                     </option>
+<option value="7440">7440 DEPARTMENT AND GRADUATE INSTITUTE OF ACCOUTING                              </option>
+<option value="7450">7450 DEPARTMENT AND GRADUATE INSTITUTE OF FINANCE                                </option>
+<option value="7460">7460 DEPARTMENT AND GRADUATE INSTITUTE OF INTRNATIONAL BUSINESS                  </option>
+<option value="7470">7470 DEPARTMENT OF INFORMATION MANAGEMENT                                        </option>
+<option value="7480">7480 DEPARTMENT AND GRADUATE INSTITUTE OF BUSINESS ADMINISTRATION                </option>
+<option value="7490">7490 GLOBAL MBA                                                                  </option>
+<option value="7500">7500 NTU-Fudan EMBA                                                              </option>
+<option value="8000">8000 COLLEGE OF PUBLIC HEALTH                                                    </option>
+<option value="8010">8010 DEPARTMENT OF PUBLIC HEALTH                                                 </option>
+<option value="8410">8410 GRADUATE INSTITUTE OF OCCUPATIONAL MEDICINE AND INDUSTRIAL HYGIENE          </option>
+<option value="8420">8420 GRADUATE INSTITUTE OF EPIDEMIOLOGY                                          </option>
+<option value="8430">8430 GRADUATE INSTITUTE OF HEALTH CARE ORGA                                      </option>
+<option value="8440">8440 GRADUATE INSTITUTE OF ENVIRONMENTAL HEALTH                                  </option>
+<option value="8470">8470 MASTER OF PUBLIC HEALTH                                                     </option>
+<option value="8480">8480 Institute of Health Policy and Management                                   </option>
+<option value="8481">8481 DIVISION OF HEALTH PROMOTION                                                </option>
+<option value="8482">8482 DIVISION OF HEALTH CARE AND INDUSTRY                                        </option>
+<option value="8490">8490 Graduate Institute of Epidemiology and Preventive Medicine                  </option>
+<option value="8491">8491 Divisions of epidemiology                                                   </option>
+<option value="8492">8492 Divisions of biomedical statistics                                          </option>
+<option value="8493">8493 Divisions of preventive medicine                                            </option>
+<option value="8500">8500 Institute of Health Behaviors and Community Sciences                        </option>
+<option value="9000">9000 COLLEGE OF ELECTRICAL ENGINEERING AND COMPUTER SCIENCE                      </option>
+<option value="9010">9010 DEPARTMENT OF ELECTRICAL ENGINEERING                                        </option>
+<option value="9020">9020 DEPARTMENT OF COMPUTER SCIENCE & INFORMATION ENGINEERING                    </option>
+<option value="9210">9210 GRADUATE INSTITUTE OF ELECTRICAL ENGINEERING                                </option>
+<option value="9220" selected>9220 GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING            </option>
+<option value="9410">9410 GRADUATE INSTITUTE OF ELECTRO-OPTICAL ENGINEERING                           </option>
+<option value="9420">9420 GRADUATE INSTITUTE OF COMMUNICATION ENGINEERING                             </option>
+<option value="9430">9430 GRADUATE INSTITUTE OF ELECTRONICS ENGINEERING                               </option>
+<option value="9440">9440 GRADUATE INSTITUTE OF NETWORKING AND MULTIMEDIA                             </option>
+<option value="9450">9450 GRADUATE INSTITUTE OF BIOMEDICAL ELECTRONICS AND BIOINFORNATICS             </option>
+<option value="A000">A000 COLLEGE OF LAW                                                              </option>
+<option value="A010">A010 DEPARTMENT OF LAW                                                           </option>
+<option value="A011">A011 DEPARTMENT OF LAW, LEGAL SCIENCE DIVISION                                   </option>
+<option value="A012">A012 DEPARTMENT OF LAW, ADJUDICATION DIVISION                                    </option>
+<option value="A013">A013 DEPARTMENT OF LAW, ECONOMIC & FINANCIAL LAWS DIVISION                       </option>
+<option value="A210">A210 GRADUATE INSTITUTE OF LAW                                                   </option>
+<option value="A408">A408 Educational Development Center                                              </option>
+<option value="A410">A410 GRADUATE INSTITUTE OF INTERDISCIPLINARY LEGAL STUDIES                       </option>
+<option value="B000">B000 COLLEGE OF LIFESCIENCE                                                      </option>
+<option value="B010">B010 DEPARTMENT OF LIFESCIENCE                                                   </option>
+<option value="B020">B020 DEPARTMENT OF BIOCHEMICAL SCIENCE AND TECHNOLOGY                            </option>
+<option value="B210">B210 Institute of Lifescience                                                    </option>
+<option value="B220">B220 INSTITUTE OF BIOCHEMICAL SCIENCE AND TECHNOLOGY                             </option>
+<option value="B420">B420 INSTITUTE OF PLANT BIOLOGY                                                  </option>
+<option value="B430">B430 INSTITUTE OF MOLECULAR AND CELLULAR BIOLOGY                                 </option>
+<option value="B440">B440 INSTITUTE OF ECOLOGY AND EVOLUTIONARY BIOLOGY                               </option>
+<option value="B450">B450 INSTITUTE OF FISHERIES SCIENCE                                              </option>
+<option value="B460">B460 INSTITUTE OF BIOCHEMICAL SCIENCE                                            </option>
+<option value="B470">B470 INSTITUTE OF MICROBIOLOGY AND BIOCHEMISTRY                                  </option>
+<option value="B471">B471 DIVISION OF BIOINDUSTRY                                                     </option>
+<option value="B472">B472 DIVISION OF BIOCHEMISTRY                                                    </option>
+<option value="B473">B473 DIVISION OF NUTRITIONAL BIOCHEMISTRY                                        </option>
+<option value="B474">B474 DIVISION OF MICROBIOLOGY                                                    </option>
+<option value="B480">B480 GENO AND SYSTEM BIOLOGY DEGREE PROGRAM                                      </option>
+<option value="H000">H000 COMMON GENERAL EDUCATION CENTER                                             </option>
+<option value="H010">H010 LIBERAL EDUCATION SECTION                                                   </option>
+<option value="H020">H020 COMMON EDUCATION SECTION                                                    </option>
+<option value="H410">H410 Master Program in Statistics of National Taiwan University                  </option>
+<option value="H420">H420 Master Program of Sport Facility Management and Health Promotion            </option>
+<option value="J000">J000 INDUSTRIAL PROGRAM                                                          </option>
+<option value="J100">J100 INDUSTRIAL TECHNOLOGY R&D MASTER PROGRAM                                    </option>
+<option value="J110">J110 INDUSTRIAL R&D TECHNOLOGY PROGRAM                                           </option>
+<option value="K000">K000 三校聯盟                                                                        </option>
+<option value="K010">K010 臺師大                                                                         </option>
+<option value="K020">K020 臺科大                                                                         </option>
+<option value="K030">K030 國北教大                                                                        </option>
+<option value="Q010">Q010 NTU ACADEMIC WRITING EDUCATION CENTER                                       </option>
+<option value="Q020">Q020 Life Education Center                                                       </option>
+<option value="Z010">Z010  Stanley Wang D-School                                                      </option>
+                                </select></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr> 
+                              <td width="120" align="right">Year-level：                                </td>
+                              <td width="480" align="left"><select id="yearcode" name="yearcode">
+                                <option value="0">All</option>
+                                <option value="$">GRADUATE PROGRAMS FOR FULLY ENPLAYED STUDENT                            </option>
+<option value="A">1ST AND 2ND YEARS OF MASTER'S DEGREE PROGRAM                            </option>
+<option value="E">1ST AND 2ND YEARS OF DOCTORAL DEGREE PROGRAM                            </option>
+<option value="F">1ST AND 2ND YEARS OF GRADUATE PROGRAM                                   </option>
+                              </select>
+    
+<input type="radio" id="selcode" name="selcode" value="3" >Required<input type="radio" id="selcode" name="selcode" value="7" >Elective<input name="selcode" type="radio" id="selcode" value="-1" checked checked>All 
+                                </td>
+
+                              <td align="left">&nbsp;</td>
+                            </tr>
+                            
+
+
+                      
+                      <tr><td width="120" align="right">Course title：</td>
+                        <td width="480">
+                        <input type="text" name="coursename" id="coursename" value = "" size="12" >
+                        Instructor：<input id="teachername" type="text" name="teachername" value = "" size="12">                        </td>
+                        <td>&nbsp;</td>
+
+                            <tr> 
+                              <td width="120" align="right">Class schedule：                                </td>
+                              <td width="480" align="left"><input name="alltime" type="radio" onClick="timeradio()" value="yes" checked checked language=javascript>
+                                 Not limited<input name="alltime" type="radio" value="no"  language=javascript onClick="timeradio()">
+Limited:  <input id="week1" name="week1" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+Mon.<input id="week2" name="week2" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+Tue.<input id="week3" name="week3" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+Wed.<input id="week4" name="week4" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+Thur.<input id="week5" name="week5" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+Fri.<input id="week6" name="week6" type="checkbox" value="1"  language=javascript onClick="daycheck()">
+Sat.</td>
+                              <td align="left">&nbsp;</td>
+                            </tr>
+                             <tr> 
+                  <td width="120" align="right">Course Unit：</td>
+                  <td width="480">
+                        <input name="allproced" type="radio" onClick="procedradio()" value="yes" checked checked language=javascript> Not limited                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                 <tr> 
+                  <td width="120" align="right">　　　　　</td>
+                  <td ><input name="allproced" type="radio" value="no"  language=javascript onClick="procedradio()">
+                    Limited:                                             <input id="proced0" name="proced0" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             0 7:10~8:00                                             <input id="proced1" name="proced1" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             1 8:10~9:00                                             <input id="proced2" name="proced2" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             2 9:10~10:00                                             <input id="proced3" name="proced3" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             3 10:20~11:10                                             <input id="proced4" name="proced4" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             4 11:20~12:10                                            
+                                             <input id="proced5" name="proced5" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             5 12:20~13:10                                             <input id="proced6" name="proced6" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             6 13:20~14:10   <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                 <input id="proced7" name="proced7" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             7 14:20~15:10                                             <input id="proced8" name="proced8" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             8 15:30~16:20                                             <input id="proced9" name="proced9" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             9 16:30~17:20                                              <input id="procedE" name="procedE" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             10 17:30~18:20                                             <input id="procedA" name="procedA" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             A 18:25~19:15                                             <input id="procedB" name="procedB" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             B 19:20~20:10                                             <input id="procedC" name="procedC" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             C 20:15~21:05                                             <input id="procedD" name="procedD" type="checkbox" value="1"  language=javascript onClick="procedcheck()">
+                                             D 21:10~22:00
+                             </tr>
+                                 <tr> 
+                  <td width="120" align="right">Selection method:</td>
+                  <td width="480">
+                        <input name="allsel" type="radio" onClick="selectradio()" value="yes" checked checked language=javascript> Not limited                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr> 
+                  <td width="120" align="right">　　　　　</td>
+                  <td width="700"><input name="allsel" type="radio" value="no"  language=javascript onClick="selectradio()">
+                    Limited:                      <input id="selCode1" name="selCode1" type="checkbox" value="1"  language=javascript onClick="selcheck()">
+                    第1類                    <input id="selCode2" name="selCode2" type="checkbox" value="1"  language=javascript onClick="selcheck()">
+                    第2類                    <input id="selCode3" name="selCode3" type="checkbox" value="1"  language=javascript onClick="selcheck()">
+                    第3類                  </td>
+                  <td>&nbsp;</td>
+                 <tr>
+                  <td width="120" align="right" colspan="3">每頁顯示筆數
+                    <input type="text" id="page_cnt" name="page_cnt" value="1500" size="4">
+                  </td>
+                  <td width="480" align="left">
+                    
+                     <input type="submit" name="Submit22" value="SUBMIT"></td>
+                  
+                </tr></form>
+ 
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+<table width="100%" border="0">
+  <tr>
+    <td>
+        </td>
+  </tr>
+</table>
+
+      <table width="100%" border="0" cellpadding="4">
+        <tr> 
+          <td>
+           <SELECT id=select_sem name=select_sem LANGUAGE=javascript onChange="return sem_onchange()">
+          
+   
+        <option selected value="105-2">2016-2</option>
+        <option  value="105-1">2016-1</option>
+        <option  value="104-2">2015-2</option>
+        <option  value="104-1">2015-1</option>
+        <option  value="103-2">2014-2</option>
+        <option  value="103-1">2014-1</option>
+        <option  value="102-2">2013-2</option>
+        <option  value="102-1">2013-1</option>
+        <option  value="101-2">2012-2</option>
+        <option  value="101-1">2012-1</option>
+        <option  value="100-2">2011-2</option>
+        <option  value="100-1">2011-1</option>
+        <option  value="99-2">2010-2</option>
+        <option  value="99-1">2010-1</option>
+        <option  value="98-2">2009-2</option>
+        <option  value="98-1">2009-1</option>
+        <option  value="97-2">2008-2</option>
+        <option  value="97-1">2008-1</option>
+        <option  value="96-2">2007-2</option>
+        <option  value="96-1">2007-1</option>
+        <option  value="95-2">2006-2</option>
+        <option  value="95-1">2006-1</option>
+        <option  value="94-2">2005-2</option>
+        <option  value="94-1">2005-1</option>
+        <option  value="93-2">2004-2</option>
+        <option  value="93-1">2004-1</option> 
+        
+            </select>
+           <font color="#CC0033"> <b>135</b> </font> courses found in total：</td>
+          <td align='right'>
+&lt;&lt;PREV PAGE　　NEXT PAGE&gt;&gt;　<select name="jump" onChange="location.href=this.options[this.selectedIndex].value;">
+<option value='?alltime=&allproced=&selcode=&dptname=9220&coursename=&teachername=&current_sem=105-2&yearcode=0&op=&startrec=0&week1=&week2=&week3=&week4=&week5=&week6=&proced0=&proced1=&proced2=&proced3=&proced4=&procedE=&proced5=&proced6=&proced7=&proced8=&proced9=&procedA=&procedB=&procedC=&procedD=&allsel=&selCode1=&selCode2=&selCode3=&page_cnt=1500' selected>Page 1 </option></select>   
+          </td>
+        </tr>
+      </table>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var window_schedule = '';
+
+function schedule_add(cid)
+{
+    if (!window_schedule.closed && window_schedule.location)
+        window_schedule.location.href = 'myschedule.php?add='+cid;
+    else
+        window_schedule=window.open('myschedule.php?add='+cid,'schedule','height=500,width=730,scrollbars=yes,resizable=yes');
+        
+    if (window.focus) {window_schedule.focus()}
+    return false;
+}
+
+</SCRIPT> 
+<table width="100%" border="1" cellspacing="1" cellpadding="1" bordercolorlight="#CCCCCC" bordercolordark="#CCCCCC">
+<tr bgcolor="#DDEDFF" align="center"><td height="25">serial number</td><td>Designated for</td><td>Curriculum Number</td><td>Class</td><td>Course title<br><font color=red><b>Please click 'Course title' to get the Course Syllabus.</b></font><td>Credits</td><td>Curriculum Identity Number</td><td>Full/Half<BR>Yr.</td><td>Required/<BR>Elective</td><td>Instructor</td><td>Selection method</td><td>Schedule<br>Classroom</td><td>The upper limit of the number </td><td width=15%>Limits on Course-adding/dropping</td><td width=15%>Remarks</td><td width=3%>Course<BR>Website</td><td width=10%>Courses I Plan to Take This Semester </td></tr>
+<tr align="center"><TD>14289</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8999</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0010&class=&dpt_code=9220&ser_no=14289&semester=105-2&lang=EN">Thesis (Ph.D.)</A></TD><TD>&nbsp;</TD><TD>922 D0010</TD><TD>Half</TD><TD>Required</TD><TD>&nbsp;</TD><TD>1</TD><TD>&nbsp;</TD><TD>100</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 100.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('14289')">Add</a></td></tr>
+<tr align="center"><TD>28942</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8000</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0030&class=&dpt_code=9220&ser_no=28942&semester=105-2&lang=EN">Seminar</A></TD><TD>1</TD><TD>922 D0030</TD><TD>Half</TD><TD>Required</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902079">CHANG RUEY-FENG</A></TD><TD>1</TD><TD>&nbsp;</TD><TD>200</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 200.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('28942')">Add</a></td></tr>
+<tr align="center"><TD>10708</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>11</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=11&dpt_code=9220&ser_no=10708&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944001">JA-LING WU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('10708')">Add</a></td></tr>
+<tr align="center"><TD>38096</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>13</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=13&dpt_code=9220&ser_no=38096&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902040">LI-CHEN FU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('38096')">Add</a></td></tr>
+<tr align="center"><TD>77878</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>14</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=14&dpt_code=9220&ser_no=77878&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902038">WEN-CHIN CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('77878')">Add</a></td></tr>
+<tr align="center"><TD>54891</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>16</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=16&dpt_code=9220&ser_no=54891&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902035">GEN-HUEY CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('54891')">Add</a></td></tr>
+<tr align="center"><TD>82986</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>18</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=18&dpt_code=9220&ser_no=82986&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902047">JIEH HSIANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('82986')">Add</a></td></tr>
+<tr align="center"><TD>78761</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>20</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=20&dpt_code=9220&ser_no=78761&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945001">LAI, FEI-PEI</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('78761')">Add</a></td></tr>
+<tr align="center"><TD>25628</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>21</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=21&dpt_code=9220&ser_no=25628&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902022">HSIN-HSI CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('25628')">Add</a></td></tr>
+<tr align="center"><TD>85535</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>22</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=22&dpt_code=9220&ser_no=85535&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944002">MING OUH YOUNG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('85535')">Add</a></td></tr>
+<tr align="center"><TD>24581</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>23</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=23&dpt_code=9220&ser_no=24581&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945002">OYANG, YEN-JEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('24581')">Add</a></td></tr>
+<tr align="center"><TD>89296</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>26</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=26&dpt_code=9220&ser_no=89296&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902054">YUNG-JEN HSU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('89296')">Add</a></td></tr>
+<tr align="center"><TD>79474</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>27</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=27&dpt_code=9220&ser_no=79474&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902056">CHIOU-SHANN FUH</A></TD><TD>1</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('79474')">Add</a></td></tr>
+<tr align="center"><TD>66528</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>29</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=29&dpt_code=9220&ser_no=66528&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902057">YUH-DAUH LYUU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('66528')">Add</a></td></tr>
+<tr align="center"><TD>26561</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>31</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=31&dpt_code=9220&ser_no=26561&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD>&nbsp;</TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('26561')">Add</a></td></tr>
+<tr align="center"><TD>53269</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>32</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=32&dpt_code=9220&ser_no=53269&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902058">CHIH-JEN LIN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('53269')">Add</a></td></tr>
+<tr align="center"><TD>69058</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>33</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=33&dpt_code=9220&ser_no=69058&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902059">TEI-WEI KUO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('69058')">Add</a></td></tr>
+<tr align="center"><TD>80347</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>34</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=34&dpt_code=9220&ser_no=80347&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902061">PANGFENG LIU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('80347')">Add</a></td></tr>
+<tr align="center"><TD>86743</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>35</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=35&dpt_code=9220&ser_no=86743&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902062">PHONE LIN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('86743')">Add</a></td></tr>
+<tr align="center"><TD>64525</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>36</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=36&dpt_code=9220&ser_no=64525&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902063">CHIA-LIN YANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('64525')">Add</a></td></tr>
+<tr align="center"><TD>33543</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>37</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=37&dpt_code=9220&ser_no=33543&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944004">YI-PING HUNG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('33543')">Add</a></td></tr>
+<tr align="center"><TD>69914</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>38</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=38&dpt_code=9220&ser_no=69914&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945003">CHAO, KUN-MAO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('69914')">Add</a></td></tr>
+<tr align="center"><TD>69195</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>39</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=39&dpt_code=9220&ser_no=69195&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902067">CHENG-FU CHOU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('69195')">Add</a></td></tr>
+<tr align="center"><TD>45215</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>40</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=40&dpt_code=9220&ser_no=45215&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944005">AI-CHUN PANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('45215')">Add</a></td></tr>
+<tr align="center"><TD>77210</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>43</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=43&dpt_code=9220&ser_no=77210&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944006">CHI-SHENG SHIH</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('77210')">Add</a></td></tr>
+<tr align="center"><TD>29685</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>44</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=44&dpt_code=9220&ser_no=29685&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902075">YUNG-YU CHUANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('29685')">Add</a></td></tr>
+<tr align="center"><TD>87190</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>46</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=46&dpt_code=9220&ser_no=87190&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902076">SHIH-HAO HUNG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('87190')">Add</a></td></tr>
+<tr align="center"><TD>32716</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>47</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=47&dpt_code=9220&ser_no=32716&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902064">HSUEH-I LU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('32716')">Add</a></td></tr>
+<tr align="center"><TD>47345</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>50</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=50&dpt_code=9220&ser_no=47345&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944012">XUE ZHI-WEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('47345')">Add</a></td></tr>
+<tr align="center"><TD>39369</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>51</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=51&dpt_code=9220&ser_no=39369&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902079">CHANG RUEY-FENG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('39369')">Add</a></td></tr>
+<tr align="center"><TD>30911</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>52</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=52&dpt_code=9220&ser_no=30911&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945008">TSENG Y. JANE</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('30911')">Add</a></td></tr>
+<tr align="center"><TD>22667</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>53</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=53&dpt_code=9220&ser_no=22667&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902081">CHENG PU-JEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('22667')">Add</a></td></tr>
+<tr align="center"><TD>31240</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>54</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=54&dpt_code=9220&ser_no=31240&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944013">LIN SHOU-DE</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('31240')">Add</a></td></tr>
+<tr align="center"><TD>23500</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>55</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=55&dpt_code=9220&ser_no=23500&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944014">LI MING-SUI</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('23500')">Add</a></td></tr>
+<tr align="center"><TD>42705</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>56</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=56&dpt_code=9220&ser_no=42705&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944015">SHU HONG-MING</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('42705')">Add</a></td></tr>
+<tr align="center"><TD>36386</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>57</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=57&dpt_code=9220&ser_no=36386&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902082">STEVEN LIAO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('36386')">Add</a></td></tr>
+<tr align="center"><TD>14552</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>58</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=58&dpt_code=9220&ser_no=14552&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=705037">BING-YU CHEN</A></TD><TD>1</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('14552')">Add</a></td></tr>
+<tr align="center"><TD>79414</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>59</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=59&dpt_code=9220&ser_no=79414&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902083">HSUAN-TIEN LIN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('79414')">Add</a></td></tr>
+<tr align="center"><TD>76576</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>60</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=60&dpt_code=9220&ser_no=76576&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902087">HSIN-MU (MICHAEL) TSAI</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('76576')">Add</a></td></tr>
+<tr align="center"><TD>53816</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>62</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=62&dpt_code=9220&ser_no=53816&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902089">MIKE Y. CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('53816')">Add</a></td></tr>
+<tr align="center"><TD>17733</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>63</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=63&dpt_code=9220&ser_no=17733&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902090">JONATHAN LEE</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('17733')">Add</a></td></tr>
+<tr align="center"><TD>25473</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>64</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=64&dpt_code=9220&ser_no=25473&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902091">JYH-SHING ROGER JANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('25473')">Add</a></td></tr>
+<tr align="center"><TD>64041</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>65</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=65&dpt_code=9220&ser_no=64041&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902094">WEI-CHUNG HSU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('64041')">Add</a></td></tr>
+<tr align="center"><TD>89717</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>66</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=66&dpt_code=9220&ser_no=89717&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902095">HSU-CHUN HSIAO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('89717')">Add</a></td></tr>
+<tr align="center"><TD>40156</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>67</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=67&dpt_code=9220&ser_no=40156&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922ED0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902096">TONY TAN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。 The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 D0100&class=67&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('40156')">Add</a></td></tr>
+<tr align="center"><TD>66690</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE8990</TD><TD>68</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 D0100&class=68&dpt_code=9220&ser_no=66690&semester=105-2&lang=EN">Special  Project</A></TD><TD>1</TD><TD>922 D0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902097">YUN-NUNG CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('66690')">Add</a></td></tr>
+<tr align="center"><TD>50812</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7999</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0010&class=&dpt_code=9220&ser_no=50812&semester=105-2&lang=EN">Thesis (M.S.)</A></TD><TD>&nbsp;</TD><TD>922 M0010</TD><TD>Half</TD><TD>Required</TD><TD>&nbsp;</TD><TD>1</TD><TD>&nbsp;</TD><TD>200</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 200.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('50812')">Add</a></td></tr>
+<tr align="center"><TD>47938</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>05</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=05&dpt_code=9220&ser_no=47938&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=901017">LIN-SHAN LEE</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('47938')">Add</a></td></tr>
+<tr align="center"><TD>65660</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>11</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=11&dpt_code=9220&ser_no=65660&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944001">JA-LING WU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('65660')">Add</a></td></tr>
+<tr align="center"><TD>34414</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>13</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=13&dpt_code=9220&ser_no=34414&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902040">LI-CHEN FU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('34414')">Add</a></td></tr>
+<tr align="center"><TD>15209</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>14</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=14&dpt_code=9220&ser_no=15209&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902038">WEN-CHIN CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('15209')">Add</a></td></tr>
+<tr align="center"><TD>39120</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>16</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=16&dpt_code=9220&ser_no=39120&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902035">GEN-HUEY CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('39120')">Add</a></td></tr>
+<tr align="center"><TD>43839</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>18</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=18&dpt_code=9220&ser_no=43839&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902047">JIEH HSIANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('43839')">Add</a></td></tr>
+<tr align="center"><TD>19417</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>20</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=20&dpt_code=9220&ser_no=19417&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945001">LAI, FEI-PEI</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('19417')">Add</a></td></tr>
+<tr align="center"><TD>71951</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>21</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=21&dpt_code=9220&ser_no=71951&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902022">HSIN-HSI CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('71951')">Add</a></td></tr>
+<tr align="center"><TD>88044</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>22</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=22&dpt_code=9220&ser_no=88044&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944002">MING OUH YOUNG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('88044')">Add</a></td></tr>
+<tr align="center"><TD>74840</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>23</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=23&dpt_code=9220&ser_no=74840&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945002">OYANG, YEN-JEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('74840')">Add</a></td></tr>
+<tr align="center"><TD>10674</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>26</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=26&dpt_code=9220&ser_no=10674&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902054">YUNG-JEN HSU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('10674')">Add</a></td></tr>
+<tr align="center"><TD>30590</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>27</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=27&dpt_code=9220&ser_no=30590&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902056">CHIOU-SHANN FUH</A></TD><TD>1</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('30590')">Add</a></td></tr>
+<tr align="center"><TD>87912</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>29</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=29&dpt_code=9220&ser_no=87912&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902057">YUH-DAUH LYUU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('87912')">Add</a></td></tr>
+<tr align="center"><TD>38164</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>31</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=31&dpt_code=9220&ser_no=38164&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD>&nbsp;</TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('38164')">Add</a></td></tr>
+<tr align="center"><TD>25859</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>32</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=32&dpt_code=9220&ser_no=25859&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902058">CHIH-JEN LIN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('25859')">Add</a></td></tr>
+<tr align="center"><TD>34756</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>33</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=33&dpt_code=9220&ser_no=34756&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902059">TEI-WEI KUO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('34756')">Add</a></td></tr>
+<tr align="center"><TD>12153</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>34</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=34&dpt_code=9220&ser_no=12153&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902061">PANGFENG LIU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('12153')">Add</a></td></tr>
+<tr align="center"><TD>46170</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>35</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=35&dpt_code=9220&ser_no=46170&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902062">PHONE LIN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('46170')">Add</a></td></tr>
+<tr align="center"><TD>67738</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>36</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=36&dpt_code=9220&ser_no=67738&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902063">CHIA-LIN YANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('67738')">Add</a></td></tr>
+<tr align="center"><TD>15125</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>37</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=37&dpt_code=9220&ser_no=15125&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944004">YI-PING HUNG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('15125')">Add</a></td></tr>
+<tr align="center"><TD>35966</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>38</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=38&dpt_code=9220&ser_no=35966&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945003">CHAO, KUN-MAO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('35966')">Add</a></td></tr>
+<tr align="center"><TD>19633</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>39</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=39&dpt_code=9220&ser_no=19633&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902067">CHENG-FU CHOU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('19633')">Add</a></td></tr>
+<tr align="center"><TD>62208</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>40</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=40&dpt_code=9220&ser_no=62208&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944005">AI-CHUN PANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('62208')">Add</a></td></tr>
+<tr align="center"><TD>26312</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>43</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=43&dpt_code=9220&ser_no=26312&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944006">CHI-SHENG SHIH</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('26312')">Add</a></td></tr>
+<tr align="center"><TD>53826</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>44</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=44&dpt_code=9220&ser_no=53826&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902075">YUNG-YU CHUANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('53826')">Add</a></td></tr>
+<tr align="center"><TD>48084</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>46</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=46&dpt_code=9220&ser_no=48084&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902076">SHIH-HAO HUNG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('48084')">Add</a></td></tr>
+<tr align="center"><TD>39137</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>47</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=47&dpt_code=9220&ser_no=39137&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902064">HSUEH-I LU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('39137')">Add</a></td></tr>
+<tr align="center"><TD>46603</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>50</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=50&dpt_code=9220&ser_no=46603&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944012">XUE ZHI-WEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('46603')">Add</a></td></tr>
+<tr align="center"><TD>17277</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>51</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=51&dpt_code=9220&ser_no=17277&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902079">CHANG RUEY-FENG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('17277')">Add</a></td></tr>
+<tr align="center"><TD>49283</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>52</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=52&dpt_code=9220&ser_no=49283&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945008">TSENG Y. JANE</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('49283')">Add</a></td></tr>
+<tr align="center"><TD>73650</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>53</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=53&dpt_code=9220&ser_no=73650&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902081">CHENG PU-JEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('73650')">Add</a></td></tr>
+<tr align="center"><TD>10265</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>54</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=54&dpt_code=9220&ser_no=10265&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944013">LIN SHOU-DE</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('10265')">Add</a></td></tr>
+<tr align="center"><TD>35526</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>55</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=55&dpt_code=9220&ser_no=35526&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944014">LI MING-SUI</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('35526')">Add</a></td></tr>
+<tr align="center"><TD>12922</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>56</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=56&dpt_code=9220&ser_no=12922&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944015">SHU HONG-MING</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('12922')">Add</a></td></tr>
+<tr align="center"><TD>80519</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>57</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=57&dpt_code=9220&ser_no=80519&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902082">STEVEN LIAO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('80519')">Add</a></td></tr>
+<tr align="center"><TD>37299</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>58</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=58&dpt_code=9220&ser_no=37299&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=705037">BING-YU CHEN</A></TD><TD>1</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('37299')">Add</a></td></tr>
+<tr align="center"><TD>16253</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>59</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=59&dpt_code=9220&ser_no=16253&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902083">HSUAN-TIEN LIN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('16253')">Add</a></td></tr>
+<tr align="center"><TD>29042</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>60</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=60&dpt_code=9220&ser_no=29042&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902087">HSIN-MU (MICHAEL) TSAI</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('29042')">Add</a></td></tr>
+<tr align="center"><TD>52501</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>62</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=62&dpt_code=9220&ser_no=52501&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902089">MIKE Y. CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('52501')">Add</a></td></tr>
+<tr align="center"><TD>81891</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>63</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=63&dpt_code=9220&ser_no=81891&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902090">JONATHAN LEE</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('81891')">Add</a></td></tr>
+<tr align="center"><TD>24147</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>64</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=64&dpt_code=9220&ser_no=24147&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902091">JYH-SHING ROGER JANG</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('24147')">Add</a></td></tr>
+<tr align="center"><TD>16775</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>65</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=65&dpt_code=9220&ser_no=16775&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902094">WEI-CHUNG HSU</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('16775')">Add</a></td></tr>
+<tr align="center"><TD>16442</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>66</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=66&dpt_code=9220&ser_no=16442&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902095">HSU-CHUN HSIAO</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('16442')">Add</a></td></tr>
+<tr align="center"><TD>75497</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>67</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=67&dpt_code=9220&ser_no=75497&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922EM0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902096">TONY TAN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。 The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 M0020&class=67&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('75497')">Add</a></td></tr>
+<tr align="center"><TD>64126</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7990</TD><TD>68</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0020&class=68&dpt_code=9220&ser_no=64126&semester=105-2&lang=EN">Special Project</A></TD><TD>1</TD><TD>922 M0020</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902097">YUN-NUNG CHEN</A></TD><TD>2</TD><TD>&nbsp;</TD><TD>14</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 14.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('64126')">Add</a></td></tr>
+<tr align="center"><TD>81107</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7000</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0030&class=&dpt_code=9220&ser_no=81107&semester=105-2&lang=EN">Seminar</A></TD><TD>1</TD><TD>922 M0030</TD><TD>Half</TD><TD>Required</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944015">SHU HONG-MING</A></TD><TD>1</TD><TD>&nbsp;</TD><TD>300</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 300.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('81107')">Add</a></td></tr>
+<tr align="center"><TD>66633</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7000</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M0030&class=02&dpt_code=9220&ser_no=66633&semester=105-2&lang=EN">Seminar</A></TD><TD>1</TD><TD>922 M0030</TD><TD>Half</TD><TD>Required</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944014">LI MING-SUI</A></TD><TD>1</TD><TD>&nbsp;</TD><TD>300</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: within this department (including students taking minor and dual degree program),The upper limit of the number of students: 300.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('66633')">Add</a></td></tr>
+<tr align="center"><TD>25035</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7010</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 M1360&class=&dpt_code=9220&ser_no=25035&semester=105-2&lang=EN">Advanced Operating System</A></TD><TD>3</TD><TD>922 M1360</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944006">CHI-SHENG SHIH</A></TD><TD>1</TD><TD> Thu7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.105</b>(資105)</a></TD><TD>40(含開放台大聯盟人數:16)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: seniors year and beyond OR Restriction: MA students and beyond,The upper limit of the number of students: 24.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052CSIE7010_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="Browse the course website" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('25035')">Add</a></td></tr>
+<tr align="center"><TD>87703</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7434</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U0100&class=&dpt_code=9220&ser_no=87703&semester=105-2&lang=EN">Brain Theory</A></TD><TD>3</TD><TD>922 U0100</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902044">CHENG-YUAN LIOU</A></TD><TD>1</TD><TD> Wed7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.310</b>(資310)</a></TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">Restriction: seniors year and beyond OR Restriction: MA students and beyond,The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('87703')">Add</a></td></tr>
+<tr align="center"><TD>34835</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5023</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U0240&class=&dpt_code=9220&ser_no=34835&semester=105-2&lang=EN">Performance Modeling</A></TD><TD>3</TD><TD>922 U0240</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902067">CHENG-FU CHOU</A></TD><TD>2</TD><TD> Wed7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.105</b>(資105)</a></TD><TD>35</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 35.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('34835')">Add</a></td></tr>
+<tr align="center"><TD>46451</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5023</TD><TD>02</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U0240&class=02&dpt_code=9220&ser_no=46451&semester=105-2&lang=EN">Performance Modeling</A></TD><TD>3</TD><TD>922EU0240</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902098">TAY YOUNG CHIANG</A></TD><TD>2</TD><TD> Wed2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.310</b>(資310)</a></TD><TD>20(含開放台大聯盟人數:2)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: seniors year and beyond,The upper limit of the number of students: 18.</TD><TD ALIGN="left" VALIGN="TOP">The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 U0240&class=02&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('46451')">Add</a></td></tr>
+<tr align="center"><TD>71114</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7134</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U0270&class=&dpt_code=9220&ser_no=71114&semester=105-2&lang=EN">Principles of Financial Computing</A></TD><TD>3</TD><TD>922 U0270</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902057">YUH-DAUH LYUU</A></TD><TD>2</TD><TD> Wed2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>50(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: students of the College of Electric Engineering and Computer Science,The upper limit of the number of students: 44.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052CSIE7134_fin_eng"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="Browse the course website" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('71114')">Add</a></td></tr>
+<tr align="center"><TD>22033</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5123</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U0280&class=&dpt_code=9220&ser_no=22033&semester=105-2&lang=EN">Numerical Methods</A></TD><TD>3</TD><TD>922EU0280</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902058">CHIH-JEN LIN</A></TD><TD>1</TD><TD> Mon2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>50(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 44.</TD><TD ALIGN="left" VALIGN="TOP">The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 U0280&class=&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('22033')">Add</a></td></tr>
+<tr align="center"><TD>71356</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5042</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U0670&class=&dpt_code=9220&ser_no=71356&semester=105-2&lang=EN">Natural Language Processing</A></TD><TD>3</TD><TD>922 U0670</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902022">HSIN-HSI CHEN</A></TD><TD>2</TD><TD> Thu2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.105</b>(資105)</a></TD><TD>55</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond,The upper limit of the number of students: 55.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('71356')">Add</a></td></tr>
+<tr align="center"><TD>14236</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5734</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U0830&class=&dpt_code=9220&ser_no=14236&semester=105-2&lang=EN">Software Engineering Design</A></TD><TD>3</TD><TD>922 U0830</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902090">JONATHAN LEE</A></TD><TD>2</TD><TD> Tue6,7,8<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.110</b>(資110)</a></TD><TD>40</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 40.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('14236')">Add</a></td></tr>
+<tr align="center"><TD>73253</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7624</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1030&class=&dpt_code=9220&ser_no=73253&semester=105-2&lang=EN">Information Theory and Coding Techniques</A></TD><TD>3</TD><TD>922 U1030</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944001">JA-LING WU</A></TD><TD>1</TD><TD> Mon7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.101</b>(資101)</a></TD><TD>80(含開放台大聯盟人數:10)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond,The upper limit of the number of students: 70.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('73253')">Add</a></td></tr>
+<tr align="center"><TD>15757</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5051</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1150&class=&dpt_code=9220&ser_no=15757&semester=105-2&lang=EN">Applied Algebra</A></TD><TD>3</TD><TD>922 U1150</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902038">WEN-CHIN CHEN</A></TD><TD>1</TD><TD> Tue7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>50(含開放台大聯盟人數:4)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 46.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('15757')">Add</a></td></tr>
+<tr align="center"><TD>37277</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5054</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1220&class=&dpt_code=9220&ser_no=37277&semester=105-2&lang=EN">Advanced Compiler Design</A></TD><TD>3</TD><TD>922 U1220</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902094">WEI-CHUNG HSU</A></TD><TD>3</TD><TD> MonA,B,C<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>20(含開放台大聯盟人數:4)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 16.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('37277')">Add</a></td></tr>
+<tr align="center"><TD>72475</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5057</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1330&class=&dpt_code=9220&ser_no=72475&semester=105-2&lang=EN">Advanced Computer Networks</A></TD><TD>3</TD><TD>922 U1330</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944005">AI-CHUN PANG</A></TD><TD>2</TD><TD> Mon7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">Restriction: students of the College of Electric Engineering and Computer Science,The upper limit of the number of students: 50.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('72475')">Add</a></td></tr>
+<tr align="center"><TD>87831</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5059</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1470&class=&dpt_code=9220&ser_no=87831&semester=105-2&lang=EN">Advanced Computer Architecture</A></TD><TD>3</TD><TD>922 U1470</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902063">CHIA-LIN YANG</A></TD><TD>2</TD><TD> Tue7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.310</b>(資310)</a></TD><TD>30(含開放台大聯盟人數:4)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 26.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('87831')">Add</a></td></tr>
+<tr align="center"><TD>75132</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5213</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1520&class=&dpt_code=9220&ser_no=75132&semester=105-2&lang=EN">Parallel Programming</A></TD><TD>3</TD><TD>922 U1520</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902061">PANGFENG LIU</A></TD><TD>2</TD><TD> Tue7,8,9(Please contact the department office for responsibility)  </TD><TD>40</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond,The upper limit of the number of students: 40.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052CSIE5213_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="Browse the course website" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('75132')">Add</a></td></tr>
+<tr align="center"><TD>56326</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5600</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1600&class=&dpt_code=9220&ser_no=56326&semester=105-2&lang=EN">Multimedium Computing Environment</A></TD><TD>3</TD><TD>922 U1600</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902079">CHANG RUEY-FENG</A></TD><TD>3</TD><TD> Wed3,4,5<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.111</b>(資111)</a></TD><TD>55(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 49.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('56326')">Add</a></td></tr>
+<tr align="center"><TD>68299</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7633</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U1940&class=&dpt_code=9220&ser_no=68299&semester=105-2&lang=EN">Virtual Reality</A></TD><TD>3</TD><TD>922EU1940</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944002">MING OUH YOUNG</A></TD><TD>2</TD><TD> Mon7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.105</b>(資105)</a></TD><TD>50(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond,The upper limit of the number of students: 44.</TD><TD ALIGN="left" VALIGN="TOP">The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 U1940&class=&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('68299')">Add</a></td></tr>
+<tr align="center"><TD>40722</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5079</TD><TD>&nbsp;</TD><TD>&nbsp;Pattern Analysis and Classification<IMG SRC="images/cancelled.jpg"    WIDTH="32" HEIGHT="18" ALIGN="ABSMIDDLE"></TD><TD>3</TD><TD>922 U3030</TD><TD>Half</TD><TD>Elective</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD> Fri3,4,5(Please contact the department office for responsibility)  </TD><TD>106</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 106.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td>&nbsp;</td></tr>
+<tr align="center"><TD>39480</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5088</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3120&class=&dpt_code=9220&ser_no=39480&semester=105-2&lang=EN">Medical Information System</A></TD><TD>3</TD><TD>922 U3120</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945001">LAI, FEI-PEI</A></TD><TD>1</TD><TD> Tue6,7,8(Please contact the department office for responsibility)  </TD><TD>22</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 22.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('39480')">Add</a></td></tr>
+<tr align="center"><TD>58036</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7190</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3130&class=&dpt_code=9220&ser_no=58036&semester=105-2&lang=EN">Cryptography and Network Security</A></TD><TD>3</TD><TD>922 U3130</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902095">HSU-CHUN HSIAO</A></TD><TD>2</TD><TD> Wed7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>50(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 44.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('58036')">Add</a></td></tr>
+<tr align="center"><TD>18541</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7694</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3150&class=&dpt_code=9220&ser_no=18541&semester=105-2&lang=EN">Digital Visual Effects</A></TD><TD>3</TD><TD>922 U3150</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902075">YUNG-YU CHUANG</A></TD><TD>1</TD><TD> Wed7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.104</b>(資104)</a></TD><TD>98(含開放台大聯盟人數:16)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond,The upper limit of the number of students: 82.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('18541')">Add</a></td></tr>
+<tr align="center"><TD>68662</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5113</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3390&class=&dpt_code=9220&ser_no=68662&semester=105-2&lang=EN">An Introduction to Advanced Performance Modeling</A></TD><TD>3</TD><TD>922 U3390</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902062">PHONE LIN</A></TD><TD>2</TD><TD> Tue7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.102</b>(資102)</a></TD><TD>80(含開放台大聯盟人數:10)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond OR Restriction: MA students and beyond,The upper limit of the number of students: 70.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('68662')">Add</a></td></tr>
+<tr align="center"><TD>68754</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5121</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3480&class=&dpt_code=9220&ser_no=68754&semester=105-2&lang=EN">Game Programming</A></TD><TD>3</TD><TD>922 U3480</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902089">MIKE Y. CHEN</A></TD><TD>2</TD><TD> Tue7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.101</b>(資101)</a></TD><TD>30(含開放台大聯盟人數:10)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('68754')">Add</a></td></tr>
+<tr align="center"><TD>88408</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5137</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3640&class=&dpt_code=9220&ser_no=88408&semester=105-2&lang=EN">Web Retrieval and Mining</A></TD><TD>3</TD><TD>922 U3640</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902081">CHENG PU-JEN</A></TD><TD>2</TD><TD> Fri2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.102</b>(資102)</a></TD><TD>98(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond OR Restriction: MA students and beyond,The upper limit of the number of students: 92.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('88408')">Add</a></td></tr>
+<tr align="center"><TD>65793</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5139</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3660&class=&dpt_code=9220&ser_no=65793&semester=105-2&lang=EN">Technical Writing and Research Method</A></TD><TD>3</TD><TD>922 U3660</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944013">LIN SHOU-DE</A></TD><TD>2</TD><TD> Tue7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.111</b>(資111)</a></TD><TD>30</TD><TD ALIGN="left" VALIGN="TOP">Restriction: Ph. D students AND Restriction: students of the College of Electric Engineering and Computer Science,The upper limit of the number of students: 30.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('65793')">Add</a></td></tr>
+<tr align="center"><TD>58331</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE4611</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3680&class=&dpt_code=9220&ser_no=58331&semester=105-2&lang=EN">Introduction to Digital Speech Processing</A></TD><TD>3</TD><TD>922 U3680</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=901017">LIN-SHAN LEE</A></TD><TD>2</TD><TD> Wed2,3,4(Please contact the department office for responsibility)  </TD><TD>80</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond,The upper limit of the number of students: 80.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052CSIE4611_DSP"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="Browse the course website" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('58331')">Add</a></td></tr>
+<tr align="center"><TD>12997</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7313</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3700&class=&dpt_code=9220&ser_no=12997&semester=105-2&lang=EN">Embedded Operating System Implementation</A></TD><TD>3</TD><TD>922 U3700</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944012">XUE ZHI-WEN</A></TD><TD>2</TD><TD> Thu7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.111</b>(資111)</a></TD><TD>48(含開放台大聯盟人數:8)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 40.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('12997')">Add</a></td></tr>
+<tr align="center"><TD>73654</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7644</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3740&class=&dpt_code=9220&ser_no=73654&semester=105-2&lang=EN">Advanced Human Computer Interaction</A></TD><TD>3</TD><TD>922 U3740</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902089">MIKE Y. CHEN</A></TD><TD>2</TD><TD> Tue2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.111</b>(資111)</a></TD><TD>30(含開放台大聯盟人數:10)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('73654')">Add</a></td></tr>
+<tr align="center"><TD>86306</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7523</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3890&class=&dpt_code=9220&ser_no=86306&semester=105-2&lang=EN">Next-generation Wireless Networks</A></TD><TD>3</TD><TD>922 U3890</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=944005">AI-CHUN PANG</A></TD><TD>2</TD><TD> Tue2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.310</b>(資310)</a></TD><TD>20</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 20.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('86306')">Add</a></td></tr>
+<tr align="center"><TD>63010</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5215</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3900&class=&dpt_code=9220&ser_no=63010&semester=105-2&lang=EN">Gpu Programming</A></TD><TD>3</TD><TD>922 U3900</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902085">WEI-CHAO CHEN</A></TD><TD>2</TD><TD> MonA,B,C<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.101</b>(資101)</a></TD><TD>60(含開放台大聯盟人數:20)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 40.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('63010')">Add</a></td></tr>
+<tr align="center"><TD>68233</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7421</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3910&class=&dpt_code=9220&ser_no=68233&semester=105-2&lang=EN">Advanced Computer Vision</A></TD><TD>3</TD><TD>922 U3910</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902056">CHIOU-SHANN FUH</A></TD><TD>1</TD><TD> Tue7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.105</b>(資105)</a></TD><TD>50(含開放台大聯盟人數:4)</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond,The upper limit of the number of students: 46.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('68233')">Add</a></td></tr>
+<tr align="center"><TD>49050</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5731</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3920&class=&dpt_code=9220&ser_no=49050&semester=105-2&lang=EN">Metabolomics</A></TD><TD>3</TD><TD>922EU3920</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=945008">TSENG Y. JANE</A></TD><TD>1</TD><TD> Thu6,7,8(Please contact the department office for responsibility)  </TD><TD>15</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 15.</TD><TD ALIGN="left" VALIGN="TOP">The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 U3920&class=&semester=105-2">description of the course conducted in English</A></TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052CSIE5731_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="Browse the course website" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('49050')">Add</a></td></tr>
+<tr align="center"><TD>78774</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7435</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U3940&class=&dpt_code=9220&ser_no=78774&semester=105-2&lang=EN">Topics in Machine Learning</A></TD><TD>3</TD><TD>922EU3940</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902058">CHIH-JEN LIN</A></TD><TD>1</TD><TD> Tue2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>50(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 44.</TD><TD ALIGN="left" VALIGN="TOP">The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 U3940&class=&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('78774')">Add</a></td></tr>
+<tr align="center"><TD>34448</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE7317</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U4060&class=&dpt_code=9220&ser_no=34448&semester=105-2&lang=EN">Advanced Topics in Systems Research</A></TD><TD>3</TD><TD>922 U4060</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902076">SHIH-HAO HUNG</A></TD><TD>1</TD><TD> Mon7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.111</b>(資111)</a></TD><TD>50(含開放台大聯盟人數:20)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 30.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('34448')">Add</a></td></tr>
+<tr align="center"><TD>15852</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5522</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U4080&class=&dpt_code=9220&ser_no=15852&semester=105-2&lang=EN">Location Based Technologies,Applications and Services</A></TD><TD>3</TD><TD>922 U4080</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902092">CHENG-HONG CHO</A></TD><TD>1</TD><TD> Mon7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.110</b>(資110)</a></TD><TD>30</TD><TD ALIGN="left" VALIGN="TOP">Restriction: seniors year and beyond OR Restriction: MA students and beyond,The upper limit of the number of students: 30.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('15852')">Add</a></td></tr>
+<tr align="center"><TD>67783</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5322</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U4120&class=&dpt_code=9220&ser_no=67783&semester=105-2&lang=EN">Big Data Systems</A></TD><TD>3</TD><TD>922EU4120</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902082">STEVEN LIAO</A></TD><TD>2</TD><TD> FriA,B,C(Please contact the department office for responsibility)  </TD><TD>25</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 25.</TD><TD ALIGN="left" VALIGN="TOP">Not open in course pre-registration period。 The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 U4120&class=&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('67783')">Add</a></td></tr>
+<tr align="center"><TD>34233</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5310</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U4140&class=&dpt_code=9220&ser_no=34233&semester=105-2&lang=EN">Virtual Machines</A></TD><TD>3</TD><TD>922 U4140</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902094">WEI-CHUNG HSU</A></TD><TD>3</TD><TD> Thu7,8,9<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.107</b>(資107)</a></TD><TD>30(含開放台大聯盟人數:4)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 26.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('34233')">Add</a></td></tr>
+<tr align="center"><TD>24011</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5440</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U4380&class=&dpt_code=9220&ser_no=24011&semester=105-2&lang=EN">Intelligent Conversational Bot</A></TD><TD>3</TD><TD>922 U4380</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902097">YUN-NUNG CHEN</A></TD><TD>2</TD><TD> Tue2,3,4<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.102</b>(資102)</a></TD><TD>50</TD><TD ALIGN="left" VALIGN="TOP">Restriction: students of the College of Electric Engineering and Computer Science,The upper limit of the number of students: 50.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('24011')">Add</a></td></tr>
+<tr align="center"><TD>29478</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5433</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U4390&class=&dpt_code=9220&ser_no=29478&semester=105-2&lang=EN">Machine Learning Techniques</A></TD><TD>2</TD><TD>922 U4390</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902083">HSUAN-TIEN LIN</A></TD><TD>2</TD><TD> Tue5,6<b><a href=http://map.ntu.edu.tw/ntu-eng.html?layer=&uid=AT3001   target=_new >C.S.I.E. BLDG. ROOM NO.102</b>(資102)</a></TD><TD>98</TD><TD ALIGN="left" VALIGN="TOP">Restriction: juniors and beyond OR Restriction: MA students and beyond,The upper limit of the number of students: 98.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('29478')">Add</a></td></tr>
+<tr align="center"><TD>86884</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>CSIE5118</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=922 U4400&class=&dpt_code=9220&ser_no=86884&semester=105-2&lang=EN">Introduction to Communication Complexity</A></TD><TD>3</TD><TD>922EU4400</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902096">TONY TAN</A></TD><TD>2</TD><TD> Mon2,3,4(Please contact the department office for responsibility)  <IMG SRC="images/Correction.jpg"   WIDTH="32" HEIGHT="18" ALIGN="ABSMIDDLE"></TD><TD>25(含開放台大聯盟人數:6)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 19.</TD><TD ALIGN="left" VALIGN="TOP">The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=922 U4400&class=&semester=105-2">description of the course conducted in English</A></TD><TD> <A TARGET="_blank" HREF="http://ceiba.ntu.edu.tw/1052CSIE5118_"><IMG SRC="images/courseweb.gif" WIDTH="18" HEIGHT="18" BORDER="0" ALT="Browse the course website" ALIGN="ABSMIDDLE"></A></TD><td><a href="#" ONCLICK="schedule_add('86884')">Add</a></td></tr>
+<tr align="center"><TD>54736</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>NM5693</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=944 U0010&class=&dpt_code=9220&ser_no=54736&semester=105-2&lang=EN">Net Arts</A></TD><TD>3</TD><TD>944 U0010</TD><TD>Half</TD><TD>Elective</TD><TD>&nbsp;</TD><TD>2</TD><TD> Wed7,8,9(Please contact the department office for responsibility)  </TD><TD>40</TD><TD ALIGN="left" VALIGN="TOP">Restriction: MA students and beyond AND Restriction: students of the College of Electric Engineering and Computer Science,The upper limit of the number of students: 40.</TD><TD ALIGN="left" VALIGN="TOP">&nbsp;</TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('54736')">Add</a></td></tr>
+<tr align="center"><TD>68344</TD><TD>GRADUATE INSTITUTE OF COMPUTER SCIENCE & INFORMATION ENGINEERING</TD><TD>NM7613</TD><TD>&nbsp;</TD><TD>&nbsp;<A TARGET="_new" HREF="print_table.php?course_id=944 U0120&class=&dpt_code=9220&ser_no=68344&semester=105-2&lang=EN">Music Signal Analysis and Retrieval</A></TD><TD>3</TD><TD>944EU0120</TD><TD>Half</TD><TD>Elective</TD><TD><A TARGET="_new" HREF="teacher.php?op=s2&td=902091">JYH-SHING ROGER JANG</A></TD><TD>1</TD><TD> Mon2,3,4(Please contact the department office for responsibility)  </TD><TD>160(含開放台大聯盟人數:20)</TD><TD ALIGN="left" VALIGN="TOP">The upper limit of the number of students: 140.</TD><TD ALIGN="left" VALIGN="TOP">The course is conducted in English。<A TARGET="_new" HREF="https://ceiba.ntu.edu.tw/question.php?lang=eng&course_id=944 U0120&class=&semester=105-2">description of the course conducted in English</A></TD><TD>&nbsp; </TD><td><a href="#" ONCLICK="schedule_add('68344')">Add</a></td></tr>
+</table>
+
+
+<table width="100%" border="0" cellpadding="4">
+<tr>
+    <td align='left'> <font color="#CC0033">*How to Add this Course (The number in the column indicates how you can add the course during the course add/drop period): <br>'1' -- There is no upper limit of the number of students in the course. You are free to add the course online.<br> '2' - The Instructor's authorization is required in order to add the course.<br>  '3' - The waiting list will be taken until further notice.<br>**Conditions and Limitations and those listed in ***Notes are only applicable in Pre-registration. They are not applicable in the course add/drop period after courses begin. (Exceptions: Teacher's Education Program, EMBA and Professional and Continuing Education Program).  </td>
+</tr>
+    <tr>
+        <td align='left'> <font color="#CC0033"> <b>135</b> </font> courses found in total</td>
+        <td align='right'>
+&lt;&lt;PREV PAGE　　NEXT PAGE&gt;&gt;　<select name="jump" onChange="location.href=this.options[this.selectedIndex].value;">
+<option value='?alltime=&allproced=&selcode=&dptname=9220&coursename=&teachername=&current_sem=105-2&yearcode=0&op=&startrec=0&week1=&week2=&week3=&week4=&week5=&week6=&proced0=&proced1=&proced2=&proced3=&proced4=&procedE=&proced5=&proced6=&proced7=&proced8=&proced9=&procedA=&procedB=&procedC=&procedD=&allsel=&selCode1=&selCode2=&selCode3=&page_cnt=1500' selected>Page 1 </option></select>  
+        </td>
+    </tr>
+</table>
+
+</BODY>
+</HTML>

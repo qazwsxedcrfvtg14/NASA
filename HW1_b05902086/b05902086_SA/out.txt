@@ -1,0 +1,41 @@
+Advanced Operating System                         	CHI-SHENG SHIH      	Thu 7,8,9 
+Brain Theory                                      	CHENG-YUAN LIOU     	Wed 7,8,9 
+Performance Modeling                              	CHENG-FU CHOU       	Wed 7,8,9 
+Performance Modeling                              	TAY YOUNG CHIANG    	Wed 2,3,4 
+Principles of Financial Computing                 	YUH-DAUH LYUU       	Wed 2,3,4 
+Numerical Methods                                 	CHIH-JEN LIN        	Mon 2,3,4 
+Natural Language Processing                       	HSIN-HSI CHEN       	Thu 2,3,4 
+Software Engineering Design                       	JONATHAN LEE        	Tue 6,7,8 
+Information Theory and Coding Techniques          	JA-LING WU          	Mon 7,8,9 
+Applied Algebra                                   	WEN-CHIN CHEN       	Tue 7,8,9 
+Advanced Compiler Design                          	WEI-CHUNG HSU       	Mon A,B,C 
+Advanced Computer Networks                        	AI-CHUN PANG        	Mon 7,8,9 
+Advanced Computer Architecture                    	CHIA-LIN YANG       	Tue 7,8,9 
+Parallel Programming                              	PANGFENG LIU        	Tue 7,8,9 
+Multimedium Computing Environment                 	CHANG RUEY-FENG     	Wed 3,4,5 
+Virtual Reality                                   	MING OUH YOUNG      	Mon 7,8,9 
+Pattern Analysis and Classification               	N/A                 	Fri 3,4,5 
+Medical Information System                        	LAI, FEI-PEI        	Tue 6,7,8 
+Cryptography and Network Security                 	HSU-CHUN HSIAO      	Wed 7,8,9 
+Digital Visual Effects                            	YUNG-YU CHUANG      	Wed 7,8,9 
+An Introduction to Advanced Performance Modeling  	PHONE LIN           	Tue 7,8,9 
+Game Programming                                  	MIKE Y. CHEN        	Tue 7,8,9 
+Web Retrieval and Mining                          	CHENG PU-JEN        	Fri 2,3,4 
+Technical Writing and Research Method             	LIN SHOU-DE         	Tue 7,8,9 
+Introduction to Digital Speech Processing         	LIN-SHAN LEE        	Wed 2,3,4 
+Embedded Operating System Implementation          	XUE ZHI-WEN         	Thu 7,8,9 
+Advanced Human Computer Interaction               	MIKE Y. CHEN        	Tue 2,3,4 
+Next-generation Wireless Networks                 	AI-CHUN PANG        	Tue 2,3,4 
+Gpu Programming                                   	WEI-CHAO CHEN       	Mon A,B,C 
+Advanced Computer Vision                          	CHIOU-SHANN FUH     	Tue 7,8,9 
+Metabolomics                                      	TSENG Y. JANE       	Thu 6,7,8 
+Topics in Machine Learning                        	CHIH-JEN LIN        	Tue 2,3,4 
+Advanced Topics in Systems Research               	SHIH-HAO HUNG       	Mon 7,8,9 
+Location Based Technologies,Applications and Services	CHENG-HONG CHO      	Mon 7,8,9 
+Big Data Systems                                  	STEVEN LIAO         	Fri A,B,C 
+Virtual Machines                                  	WEI-CHUNG HSU       	Thu 7,8,9 
+Intelligent Conversational Bot                    	YUN-NUNG CHEN       	Tue 2,3,4 
+Machine Learning Techniques                       	HSUAN-TIEN LIN      	Tue 5,6   
+Introduction to Communication Complexity          	TONY TAN            	Mon 2,3,4 
+Net Arts                                          	N/A                 	Wed 7,8,9 
+Music Signal Analysis and Retrieval               	JYH-SHING ROGER JANG	Mon 2,3,4 
