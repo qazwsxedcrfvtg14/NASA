@@ -1,0 +1,14 @@
+echo "VVVVVVVVVVVVVVVVVVVV"; 
+    echo "hello, my name is Doge"; 
+    echo "my personal homepage is at http://localhost:8080/q.dog/"; 
+    echo "access it with \"elinks http://localhost:8080/q.dog/\""; 
+    echo "if you see anything abnormal, please help fix it, because I ..."; 
+    echo "because I am stupid"; 
+    echo "the root password is \"root\" ( :"; 
+    echo "^^^^^^^^^^^^^^^^^^^^"; 
+    useradd -m -p "" q.dog; chage -d 0 q.dog; 
+    chcon -t net_conf_t /etc/resolv.dns.conf; 
+    systemctl enable dnsmasq web &> /dev/null;
+    systemctl start dnsmasq web;
+    fallocate -l 3556855555 /root/.dummy-file-just-to-make-things-a-bit-worse;
+    echo "root:root" | chpasswd

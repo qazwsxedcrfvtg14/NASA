@@ -1,0 +1,10 @@
+[Unit]
+Description=QDog's web server
+
+[Service]
+User=q.dog
+WorkingDirectory=/var/www/
+ExecStart=/usr/bin/python2 -m SimpleHTTPServer 8080
+
+[Install]
+WantedBy=multi-user.target
