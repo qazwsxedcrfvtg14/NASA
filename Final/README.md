@@ -1,4 +1,6 @@
 # NASA 2017 Final Project - NFS 伺服器靜態負載平衡
+## Github Location
+* https://github.com/qazwsxedcrfvtg14/NASA/tree/master/Final/
 ## 組員
 * 資工一 b05902086 周逸  
 * 資工二 b04902112 張凱捷  
@@ -6,9 +8,14 @@
 * 資工一 b05902093 顏睿楠  
 ## 題目敘述
 ## 系統簡介
-* Autofs
-* Hash function
-* Moving files
+* 架構
+    我們這個系統的架構是由一台 DNS Server、一台 NFS Master Server、多台 NFS Server和多台 Client 所組成。
+    * DNS Server  
+        一台控制域名用的機器，這台機器可以讓發生緊急意外的時能將其他機器所對應到的域名對應到其他地方。  
+        並且能讓管理系統的人不需要去直接把每一台機器的IP直接記起來
+    * NFS Master Server
+        一台存放著各台系統和NFS負載相關設定檔的位置，但是當這台機器故障時就需要透過DNS將指向這台機器的域名換到其他機器上。
+        而管理員要操作各項關於NFS負載平衡的設定時，也只要在這台機器上操作即可。
 ## 實作過程
 * Hash function
     * A balanced lookup table
@@ -23,8 +30,8 @@
     ![img](2.png)  
     我們使用了兩種不同的方式來時做這個過程來移動檔案  
     * By NFS bootstrap
-        * Service
-        * 
+        這裡我們在每台機器上執行了一個自己寫的Service，而那服務的內容是每過一段時間就去檢查NFS master
+        * 那個
     * By SSH
         * move group0 from nfs1 to nfs2
         ```
