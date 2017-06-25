@@ -33,6 +33,8 @@
     * 增加&刪除機器
 * Moving files  
     當使用 Hash function 將群組和機器之間對應修改後，我們可能會需要將一些群組的檔案在不同的機器上做搬移。  
+* Auto backup files  
+    每天會固定在半夜四點的時候自動把NFS之間的檔案同步，使備援資料不會過時太久，也比較不會占用尖峰時間的系統資源。
 ## 實作過程
 * Structure  
     利用 Hyper-V 開啟多台機器，手動設定好每台的 IP，接著就依照每台不同的需求去處理。
@@ -131,6 +133,9 @@
     * 比較使用  
         NFS Bootstrap 的這個方式好處是不用在 NFS Master上儲存能登入其他所有機器 root 的私鑰，因此會比較安全(安全性基於交換器和網路的基礎架構)，也會比較容易統一管理，並且較容易平行處裡搬檔案的過程。
         SSH 這個方式的好處則是操作會比較及時，可以在指令執行完之後就能馬上看到效果(因為 NFS Bootstrap 的設定是每20秒去檢查一次設定檔是否被更改)，而也比較容易知道是否有機器執行失敗。
+* Auto backup files  
+    使用類似於 Moving files 的方式去定期把 ```/var/nfs``` 中的內容複製到對應到的機器上的 ```/var/nfs_backup``` 中，並且使用系統內建的 crontab 去做到自動排程的功能。
+    * [Code](https://github.com/qazwsxedcrfvtg14/NASA/blob/master/Final/sync/syncnfs.cpp)
 ## 遇到的困難
 * 原本想要使用 ```inotifywait``` 這個指令去偵測 NFS Master 上的檔案是否被修改過，但是後來查資料後發現用 NFS 方式掛載的資料夾當裡面檔案被修改時系統是不會接到訊息(不過好像 NFSv4.1 開始會支援)，因此沒辦法用 ```inotifywait``` 去檢查檔案是否被修改，因此只好使用每隔 20 秒檢查檔案內容的方式去判斷檔案是否被修改過。
 * 如果 NFS Master 故障了，那麼整個系統就會停擺，此時會需要透過修改 DNS 的方式去緊急備援 NFS Master，或是對於 NFS Master 也使用定期類似於 NFS Server 的方式去做備援。
@@ -151,4 +156,4 @@
     * Hash function
     * PPT
 * 資工一 b05902092 謝耀慶 
-    * Auto Backup files
+    * Auto backup files
