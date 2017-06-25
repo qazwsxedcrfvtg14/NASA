@@ -1,0 +1,9 @@
+add 01 nfs1.nfs.server nfs2.nfs.server
+add 02 nfs1.nfs.server nfs2.nfs.server
+add 03 nfs1.nfs.server nfs2.nfs.server
+add 04 nfs2.nfs.server nfs1.nfs.server
+add 05 nfs2.nfs.server nfs1.nfs.server
+add 06 nfs2.nfs.server nfs1.nfs.server
+add 07 nfs1.nfs.server nfs2.nfs.server
+add 08 nfs2.nfs.server nfs1.nfs.server
+

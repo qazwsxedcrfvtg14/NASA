@@ -1,0 +1,2 @@
+nfs1.nfs.server
+nfs2.nfs.server

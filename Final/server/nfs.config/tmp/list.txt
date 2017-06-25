@@ -1,0 +1,8 @@
+01 nfs1.nfs.server nfs2.nfs.server
+02 nfs1.nfs.server nfs2.nfs.server
+03 nfs1.nfs.server nfs2.nfs.server
+04 nfs2.nfs.server nfs1.nfs.server
+05 nfs2.nfs.server nfs1.nfs.server
+06 nfs2.nfs.server nfs1.nfs.server
+07 nfs1.nfs.server nfs2.nfs.server
+08 nfs2.nfs.server nfs1.nfs.server
