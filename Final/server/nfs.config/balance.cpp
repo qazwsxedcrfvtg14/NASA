@@ -154,7 +154,7 @@ void write_list()
     file.open(filename, fstream::trunc|fstream::out);
 
     for (int gi = 0; gi < groups.size(); gi++)
-        file<<groups[gi]<<" -rw,fg,soft,use-weight-only "<<machines[primary[gi] ]<<"(1):/var/nfs/"<<groups[gi]<<" "<<machines[secondary[gi] ]<<"(2):/var/nfs/"<<groups[gi]<<endl;
+        file<<groups[gi]<<" -rw,fg,soft,use-weight-only "<<machines[primary[gi] ]<<"(1):/var/nfs/"<<groups[gi]<<" "<<machines[secondary[gi] ]<<"(2):/var/nfs_backup/"<<groups[gi]<<endl;
     file.close();
 }
 
@@ -226,7 +226,7 @@ void add_group()
         primary.push_back(pool[0]);
         //load[pool[0] ]++;
 	int machine = rand()%machines.size();
-	while ( machine == pool[0] )    
+	while ( machine == pool[0] )
 	    machine = rand()%machines.size();
         secondary.push_back(machine);
 		file<<"add "<<group<<" "<<machines[pool[0] ]<<" "<<machines[machine ]<<endl;
@@ -394,9 +394,9 @@ void delete_machine()
 				while ( primary[gi] == machine )
 					machine = rand()%(machines.size()-1);
 				secondary[gi] = machine;
-			}	
+			}
 		}
-		
+
 		machines.pop_back();
 	}
 
