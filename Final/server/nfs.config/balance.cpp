@@ -20,24 +20,27 @@ vector<char*> args;
 vector<string> groups, machines;
 vector<string> _groups, _machines;
 
-void swap2(int &x, int &y){ int c = x; x = y; y = c; }
-
 void init();
 void add_group();
 void delete_group();
 void add_machine();
 void delete_machine();
 void help();
+void show();
 
 typedef void (*handler)();
-vector<string> options = {"-i", "+g", "-g", "+m", "-m"};
-vector<handler> handlers = {init, add_group, delete_group, add_machine, delete_machine};
+vector<string> options = {"-i", "+g", "-g", "+m", "-m", "-s"};
+vector<handler> handlers = {init, add_group, delete_group, add_machine, delete_machine, show};
 
 vector<int> load;
-vector<vector<int> > backup_load;
 vector<int> change;
 
 bool load_cmp(int a, int b);
+
+int my_rand()
+{
+	return rand()>>3;
+}
 
 int main(int argc, char *argv[])
 {
@@ -121,7 +124,7 @@ void read_list()
     string group, machine, backup;
     primary.resize(groups.size() );
     secondary.resize(groups.size() );
-    load.resize(groups.size() );
+    load.resize(machines.size() );
 
     for (int gi = 0; gi < groups.size(); gi++) {
         file>>group>>machine>>backup;
@@ -225,11 +228,11 @@ void add_group()
         sort(pool.begin(), pool.end(), load_cmp);
         primary.push_back(pool[0]);
         load[pool[0] ]++;
-	int machine = rand()%machines.size();
-	while ( machine == pool[0] )
-	    machine = rand()%machines.size();
+		int machine = my_rand()%machines.size();
+		while ( machine == pool[0] )
+	    	machine = my_rand()%machines.size();
         secondary.push_back(machine);
-	file<<"add "<<group<<" "<<machines[pool[0] ]<<" "<<machines[machine ]<<endl;
+		file<<"add "<<group<<" "<<machines[pool[0] ]<<" "<<machines[machine]<<endl;
     }
 
     write_groups_and_machines();
@@ -271,6 +274,25 @@ void delete_group()
 	file.close();
 }
 
+
+bool move_away_cmp(int a, int b)
+{
+	return load[primary[a] ] > load[primary[b] ];
+}
+
+int rand_by_size()
+{
+	int sum = 0;
+	for (int gi = 0; gi < groups.size(); gi++)
+		sum += load[primary[gi] ];
+	
+	int rd = my_rand()%sum, tmp = 0;
+	for (int gi = 0; gi < groups.size(); gi++) {
+		tmp += load[primary[gi] ];
+		if ( tmp > rd ) return gi;
+	}
+}
+
 void add_machine()
 {
     fstream file;
@@ -294,22 +316,18 @@ void add_machine()
 		machines.push_back(machine);
 
 		for (int i = 0; i < groups.size()/machines.size(); i++) {
-			int group = rand()%groups.size();
+			int group = rand_by_size()%groups.size();
 			while ( primary[group] == machines.size()-1 || secondary[group] == machines.size()-1 )
-				group = rand()%groups.size();
-			//file<<"move "<<groups[group]<<" "<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<" ";
+				group = rand_by_size()%groups.size();
 			primary[group] = machines.size()-1;
-			//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;
 			change.push_back(group);
 		}
 
 		for (int i = 0; i < groups.size()/machines.size(); i++) {
-			int group = rand()%groups.size();
+			int group = my_rand()%groups.size();
 			while ( primary[group] == machines.size()-1 || secondary[group] == machines.size()-1 )
-				group = rand()%groups.size();
-			//file<<"move "<<groups[group]<<" "<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<" ";
+				group = my_rand()%groups.size();
 			secondary[group] = machines.size()-1;
-			//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;
 			change.push_back(group);
 		}
 	}
@@ -346,6 +364,7 @@ void delete_machine()
 		}
 
 	if ( !OK ) return;
+    
 
 	for (string machine: args) {
 		int mid = machine_name_to_id(machine);
@@ -354,14 +373,6 @@ void delete_machine()
 
 		for (int gi = 0; gi < groups.size(); gi++) {
 			if ( primary[gi] == mid ) {
-				/*int group = gi;
-				int machine = rand()%(machines.size()-1);
-				//file<<"move "<<groups[group]<<" "<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<" ";
-				while ( secondary[gi] == machine )
-					machine = rand()%(machines.size()-1);
-
-				primary[gi] = machine;
-				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;*/
 				primary[gi] = -1;
 				change.push_back(gi);
 			} else if ( primary[gi] == machines.size()-1 ) {
@@ -369,30 +380,26 @@ void delete_machine()
 			}
 
 			if ( secondary[gi] == mid ) {
-				/*int group = gi;
-				int machine = rand()%(machines.size()-1);
-				while ( primary[gi] == machine )
-					machine = rand()%(machines.size()-1);
-				//file<<"move "<<groups[group]<<" "<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<" ";
-				secondary[gi] = machine;
-				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;*/
 				secondary[gi] = -1;
 				change.push_back(gi);
 			} else if ( secondary[gi] == machines.size()-1 ) {
 				secondary[gi] = mid;
 			}
 		}
+	
+		vector<int> pool;
+    	for (int mi = 0; mi < machines.size()-1; mi++)
+        	pool.push_back(mi);
 
 		for (int gi = 0; gi < groups.size(); gi++) {
 			if ( primary[gi] == -1 ) {
-				int machine = rand()%(machines.size()-1);
-				while ( secondary[gi] == machine )
-					machine = rand()%(machines.size()-1);
-				primary[gi] = machine;
+				sort(pool.begin(), pool.end(), load_cmp);
+				if ( pool[0] == secondary[gi] ) primary[gi] = pool[1], load[pool[1] ]++;
+				else primary[gi] = pool[0], load[pool[0] ]++; 
 			} else if ( secondary[gi] == -1 ) {
-				int machine = rand()%(machines.size()-1);
+				int machine = my_rand()%(machines.size()-1);
 				while ( primary[gi] == machine )
-					machine = rand()%(machines.size()-1);
+					machine = my_rand()%(machines.size()-1);
 				secondary[gi] = machine;
 			}
 		}
@@ -414,6 +421,15 @@ void delete_machine()
 	file.close();
 }
 
+void show()
+{
+	read_groups_and_machines();
+	read_list();
+
+	for (int mi = 0; mi < machines.size(); mi++) 
+		cout<<machines[mi]<<" "<<load[mi]<<endl;
+}
+
 void help()
 {
 	puts("The following options are available:");
@@ -422,4 +438,5 @@ void help()
 	puts("+g	add a group");
 	puts("-m	delete a machine");
 	puts("+m	add a machine");
+	puts("-s	show balance detail");
 }
