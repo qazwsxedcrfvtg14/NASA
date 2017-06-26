@@ -351,33 +351,49 @@ void delete_machine()
 
 		for (int gi = 0; gi < groups.size(); gi++) {
 			if ( primary[gi] == mid ) {
-				int group = gi;
+				/*int group = gi;
 				int machine = rand()%(machines.size()-1);
 				//file<<"move "<<groups[group]<<" "<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<" ";
 				while ( secondary[gi] == machine )
 					machine = rand()%(machines.size()-1);
 
 				primary[gi] = machine;
-				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;
+				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;*/
+				primary[gi] = -1;
 				change.push_back(group);
 			} else if ( primary[gi] == machines.size()-1 ) {
 				primary[gi] = mid;
 			}
 
 			if ( secondary[gi] == mid ) {
-				int group = gi;
+				/*int group = gi;
 				int machine = rand()%(machines.size()-1);
 				while ( primary[gi] == machine )
 					machine = rand()%(machines.size()-1);
 				//file<<"move "<<groups[group]<<" "<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<" ";
 				secondary[gi] = machine;
-				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;
+				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;*/
+				secondary[gi] = -1;
 				change.push_back(group);
 			} else if ( secondary[gi] == machines.size()-1 ) {
 				secondary[gi] = mid;
 			}
 		}
 
+		for (int gi = 0; gi < groups.size(); gi++) {
+			if ( primary[gi] == -1 ) {
+				int machine = rand()%(machines.size()-1);
+				while ( secondary[gi] == machine )
+					machine = rand()%(machines.size()-1);
+				primary[gi] = machine;
+			} else if ( secondary[gi] == -1 ) {
+				int machine = rand()%(machines.size()-1);
+				while ( primary[gi] == machine )
+					machine = rand()%(machines.size()-1);
+				secondary[gi] = machine;
+			}	
+		}
+		
 		machines.pop_back();
 	}
 
