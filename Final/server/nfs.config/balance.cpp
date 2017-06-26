@@ -224,9 +224,12 @@ void add_group()
         groups.push_back(group);
         sort(pool.begin(), pool.end(), load_cmp);
         primary.push_back(pool[0]);
-        load[pool[0] ]++;
-        secondary.push_back(pool[1]);
-		file<<"add "<<group<<" "<<machines[pool[0] ]<<" "<<machines[pool[1] ]<<endl;
+        //load[pool[0] ]++;
+	int machine = rand()%machines.size();
+	while ( machine == pool[0] )    
+	    machine = rand()%machines.size();
+        secondary.push_back(machine);
+		file<<"add "<<group<<" "<<machines[pool[0] ]<<" "<<machines[machine ]<<endl;
     }
 
     write_groups_and_machines();
@@ -360,7 +363,7 @@ void delete_machine()
 				primary[gi] = machine;
 				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;*/
 				primary[gi] = -1;
-				change.push_back(group);
+				change.push_back(gi);
 			} else if ( primary[gi] == machines.size()-1 ) {
 				primary[gi] = mid;
 			}
@@ -374,7 +377,7 @@ void delete_machine()
 				secondary[gi] = machine;
 				//file<<machines[primary[group] ]<<" "<<machines[secondary[group] ]<<endl;*/
 				secondary[gi] = -1;
-				change.push_back(group);
+				change.push_back(gi);
 			} else if ( secondary[gi] == machines.size()-1 ) {
 				secondary[gi] = mid;
 			}
