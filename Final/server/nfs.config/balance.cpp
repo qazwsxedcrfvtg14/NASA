@@ -224,12 +224,12 @@ void add_group()
         groups.push_back(group);
         sort(pool.begin(), pool.end(), load_cmp);
         primary.push_back(pool[0]);
-        //load[pool[0] ]++;
+        load[pool[0] ]++;
 	int machine = rand()%machines.size();
 	while ( machine == pool[0] )
 	    machine = rand()%machines.size();
         secondary.push_back(machine);
-		file<<"add "<<group<<" "<<machines[pool[0] ]<<" "<<machines[machine ]<<endl;
+	file<<"add "<<group<<" "<<machines[pool[0] ]<<" "<<machines[machine ]<<endl;
     }
 
     write_groups_and_machines();
