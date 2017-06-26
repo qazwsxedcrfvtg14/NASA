@@ -10,10 +10,6 @@
 #include <unistd.h>
 using namespace std;
 
-typedef pair<int,int> pr;
-#define f first
-#define s second
-struct stat st = {0};
 string FileToStr(const char *fil){
     fstream fin;
     fin.open(fil,ios::in|ios::binary);
@@ -31,15 +27,9 @@ int main(int argc, char *argv[]){
     else
         exit(1);
 
-    string change="";
-        while(true){
-        string chg=FileToStr("/etc/autofs.config/list.txt");
-        if(change==chg){
-            sleep(20);
-            }
+        string nfslist=FileToStr("/etc/autofs.config/list.txt");
 
-        change=chg;
-        stringstream file(change);
+        stringstream file(nfslist);
         string user;
         struct stat sb;
         system("mkdir /mnt/nfs/sync");
@@ -54,7 +44,5 @@ int main(int argc, char *argv[]){
                 system(("umount "+mnt).c_str());
         }
         system("rm -rf /mnt/nfs/sync");
-        break;
-        }
 }
 
